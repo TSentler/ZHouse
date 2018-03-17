@@ -10,12 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Lvl1_house</layout>
-        <layout order="1">Lvl2_pole</layout>
-        <event-sheet active="1" order="2">Event sheet 1</event-sheet>
-        <event-sheet order="3">EnemyZ1</event-sheet>
-        <event-sheet order="4">Event sheet 2</event-sheet>
-        <event-sheet order="5">EPlayerController</event-sheet>
+        <layout order="1">Lvl1_house</layout>
+        <layout order="2">Lvl2_pole</layout>
+        <event-sheet active="1" order="3">ESLvl1</event-sheet>
+        <event-sheet order="4">EnemyZ1</event-sheet>
+        <event-sheet order="5">ESLvl2</event-sheet>
+        <event-sheet order="6">EPlayerController</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -35,6 +35,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/House/" />
         <folder expanded="1" path="object-folder/Backyard/" />
         <folder expanded="1" path="object-folder/Furniture/" />
+        <folder expanded="1" path="object-folder/Help/" />
+        <folder expanded="1" path="object-folder/Joy/" />
+        <folder expanded="1" path="object-folder/Particle/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -63,32 +66,32 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Table/" />
         <folder expanded="1" path="animation-folder/TV/" />
         <folder expanded="1" path="animation-folder/Chandelier/" />
+        <folder expanded="1" path="animation-folder/HelpArtRoll/" />
+        <folder expanded="1" path="animation-folder/HelpArtX/" />
+        <folder expanded="1" path="animation-folder/HelpArtArrow/" />
+        <folder expanded="1" path="animation-folder/HelpArtZ/" />
+        <folder expanded="1" path="animation-folder/HelpJoy/" />
+        <folder expanded="1" path="animation-folder/JoyArrowDown/" />
+        <folder expanded="1" path="animation-folder/JoyArrowDownLeft/" />
+        <folder expanded="1" path="animation-folder/JoyArrowDownRight/" />
+        <folder expanded="1" path="animation-folder/JoyArrowLeft/" />
+        <folder expanded="1" path="animation-folder/JoyArrowRight/" />
+        <folder expanded="1" path="animation-folder/JoyArrowUp/" />
+        <folder expanded="1" path="animation-folder/JoyArrowUpLeft/" />
+        <folder expanded="1" path="animation-folder/JoyArrowUpRight/" />
+        <folder expanded="1" path="animation-folder/JoyBtnX/" />
+        <folder expanded="1" path="animation-folder/JoyBtnZ/" />
         <folder expanded="1" path="animation-folder/Player/" />
         <folder expanded="1" path="animation-folder/size256/" />
         <folder expanded="1" path="animation-folder/PlayerCameraHead/" />
         <folder expanded="1" path="animation-folder/Rock/" />
-        <folder expanded="1" path="animation-folder/HelpArtArrow/" />
         <folder expanded="1" path="animation-folder/Trigger/" />
-        <folder expanded="1" path="animation-folder/HelpArtZ/" />
         <folder expanded="1" path="animation-folder/EnemyOutWindow/" />
         <folder expanded="1" path="animation-folder/SunLigth/" />
         <folder expanded="1" path="animation-folder/EnemyZ1/" />
         <folder expanded="1" path="animation-folder/EnemyPatrolPoint/" />
-        <folder expanded="1" path="animation-folder/HelpArtRoll/" />
         <folder expanded="1" path="animation-folder/ShotGun/" />
         <folder expanded="1" path="animation-folder/Bullet/" />
-        <folder expanded="1" path="animation-folder/HelpArtX/" />
-        <folder expanded="1" path="animation-folder/HelpJoy/" />
-        <folder expanded="1" path="animation-folder/JoyArrowUp/" />
-        <folder expanded="1" path="animation-folder/JoyBtnZ/" />
-        <folder expanded="1" path="animation-folder/JoyBtnX/" />
-        <folder expanded="1" path="animation-folder/JoyArrowDown/" />
-        <folder expanded="1" path="animation-folder/JoyArrowLeft/" />
-        <folder expanded="1" path="animation-folder/JoyArrowRight/" />
-        <folder expanded="1" path="animation-folder/JoyArrowUpRight/" />
-        <folder expanded="1" path="animation-folder/JoyArrowUpLeft/" />
-        <folder expanded="1" path="animation-folder/JoyArrowDownLeft/" />
-        <folder expanded="1" path="animation-folder/JoyArrowDownRight/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
         <folder expanded="1" path="animation-folder/Sprite2/" />
         <folder expanded="1" path="animation-folder/Sprite3/" />

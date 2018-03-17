@@ -439,6 +439,292 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="Help">
+            <object-type name="HelpArtRoll" sid="557924706376801">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="466223125212543" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HelpArtX" sid="787683044576789">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="558953373741016" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HelpArtArrow" sid="366353561163535">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911080621773764" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HelpArtZ" sid="883741382394631">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464455373871156" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HelpJoy" sid="914321541103987">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="212525152568784" speed="5">
+                        <frame duration="1" hotspotX="0.528455" hotspotY="0.368421">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Joy">
+            <object-type name="JoyArrowDown" sid="282990288456221">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="641763591203675" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowDownLeft" sid="919133216091754">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="393471332386926" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowDownRight" sid="562446099424303">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="168590418141039" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowLeft" sid="295212239952385">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="540049938505182" speed="5">
+                        <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowRight" sid="953082702952065">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="893769478735774" speed="5">
+                        <frame duration="1" hotspotX="0.529412" hotspotY="0.516129">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowUp" sid="694516525077723">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="309873143089846" speed="5">
+                        <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowUpLeft" sid="312622178713074">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="277580419236462" speed="5">
+                        <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyArrowUpRight" sid="577224257333000">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="783054271948842" speed="5">
+                        <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyBtnX" sid="741488630904734">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="391153477174914" speed="5">
+                        <frame duration="1" hotspotX="-1.73333" hotspotY="0.257143">
+                            <collision-poly>
+                                <point x="0.966667" y="0.971429" />
+                                <point x="0" y="0.971429" />
+                                <point x="0" y="0" />
+                                <point x="0.966667" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="JoyBtnZ" sid="470845347710313">
+                <plugin id="Sprite" />
+                <effects>
+                    <effect-type name="HardLight">
+                        <effect id="hardlight" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="111141411434257" speed="5">
+                        <frame duration="1" hotspotX="-0.333333" hotspotY="0.259259">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Particle">
+            <object-type name="PDustFoot" sid="347724932557404">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+            <object-type name="PDustBig" sid="319781720915367">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
+        </object-folder>
         <object-type name="Player" sid="545642236739788">
             <plugin id="Sprite" />
             <instance-variables>
@@ -450,9 +736,6 @@
                 <instance-variable name="Weapon" sid="524720278300825" type="number" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="BoundToLayout" sid="395318065983821">
-                    <behavior id="bound" />
-                </behavior-type>
                 <behavior-type name="Platform" sid="110732531719883">
                     <behavior id="Platform" />
                 </behavior-type>
@@ -539,19 +822,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="HelpArtArrow" sid="366353561163535">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911080621773764" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Trigger" sid="272629966247073">
             <plugin id="Sprite" />
             <instance-variables>
@@ -560,19 +830,6 @@
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521649346538686" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="HelpArtZ" sid="883741382394631">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464455373871156" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -620,10 +877,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="PDustBig" sid="319781720915367">
-            <plugin id="Particles" />
-            <texture />
-        </object-type>
         <object-type name="SunLigth" sid="575190952370989">
             <plugin id="Sprite" />
             <animation-folder>
@@ -638,10 +891,6 @@
                     </frame>
                 </animation>
             </animation-folder>
-        </object-type>
-        <object-type name="PDustFoot" sid="347724932557404">
-            <plugin id="Particles" />
-            <texture />
         </object-type>
         <object-type name="EnemyZ1" sid="614760875890177">
             <plugin id="Sprite" />
@@ -699,19 +948,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="HelpArtRoll" sid="557924706376801">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="466223125212543" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="PBoardSplinters" sid="418826797661319">
             <plugin id="Particles" />
             <texture />
@@ -748,244 +984,11 @@
         <object-type name="TTheEnd" sid="491276834367353">
             <plugin id="Text" />
         </object-type>
-        <object-type name="HelpArtX" sid="787683044576789">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="558953373741016" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="HelpJoy" sid="914321541103987">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="212525152568784" speed="5">
-                    <frame duration="1" hotspotX="0.528455" hotspotY="0.368421">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowUp" sid="694516525077723">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="309873143089846" speed="5">
-                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyBtnZ" sid="470845347710313">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="111141411434257" speed="5">
-                    <frame duration="1" hotspotX="-0.333333" hotspotY="0.259259">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyBtnX" sid="741488630904734">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="391153477174914" speed="5">
-                    <frame duration="1" hotspotX="-1.73333" hotspotY="0.257143">
-                        <collision-poly>
-                            <point x="0.966667" y="0.971429" />
-                            <point x="0" y="0.971429" />
-                            <point x="0" y="0" />
-                            <point x="0.966667" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Mouse" sid="121636950207804">
             <plugin id="Mouse" />
         </object-type>
         <object-type name="Touch" sid="443420888424553">
             <plugin id="Touch" />
-        </object-type>
-        <object-type name="JoyArrowDown" sid="282990288456221">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="641763591203675" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowLeft" sid="295212239952385">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="540049938505182" speed="5">
-                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowRight" sid="953082702952065">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="893769478735774" speed="5">
-                    <frame duration="1" hotspotX="0.529412" hotspotY="0.516129">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowUpRight" sid="577224257333000">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="783054271948842" speed="5">
-                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowUpLeft" sid="312622178713074">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="277580419236462" speed="5">
-                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowDownLeft" sid="919133216091754">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="393471332386926" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="JoyArrowDownRight" sid="562446099424303">
-            <plugin id="Sprite" />
-            <effects>
-                <effect-type name="HardLight">
-                    <effect id="hardlight" />
-                </effect-type>
-            </effects>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="168590418141039" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
-                        <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="TiledBackground" sid="572921246918467">
             <plugin id="TiledBg" />
@@ -1097,13 +1100,13 @@
         <layout>Lvl2_pole.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>ESLvl1.xml</event-sheet>
         <event-sheet>EPlayerController.xml</event-sheet>
         <event-sheet>EnemyZOutWindow.xml</event-sheet>
         <event-sheet>EnemyZ1.xml</event-sheet>
         <event-sheet>Weapon.xml</event-sheet>
         <event-sheet>Joy.xml</event-sheet>
-        <event-sheet>Event sheet 2.xml</event-sheet>
+        <event-sheet>ESLvl2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="34" />

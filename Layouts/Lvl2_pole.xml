@@ -2,7 +2,7 @@
 <c2layout>
     <name>Lvl2_pole</name>
     <sid>529286645182957</sid>
-    <event-sheet>Event sheet 2</event-sheet>
+    <event-sheet>ESLvl2</event-sheet>
     <size>
         <width>2800</width>
         <height>1000</height>
@@ -48,6 +48,26 @@
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>-1.383387685</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="TiledBackground3" uid="182">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>421.203216553</x>
+                        <y>-93.466705322</y>
+                        <z>0</z>
+                        <width>512</width>
+                        <height>512</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -177,7 +197,7 @@
                         <y>544.785461426</y>
                         <z>0</z>
                         <width>1302</width>
-                        <height>64</height>
+                        <height>188</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -342,11 +362,6 @@
                         <Weapon>0</Weapon>
                     </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="BoundToLayout">
-                            <properties>
-                                <bound-by>Edge</bound-by>
-                            </properties>
-                        </behavior-instance>
                         <behavior-instance type="Platform">
                             <properties>
                                 <max-speed>130</max-speed>
@@ -715,26 +730,6 @@
                         <z>0</z>
                         <width>362</width>
                         <height>15</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="TiledBackground3" uid="182">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>421.203216553</x>
-                        <y>-93.466705322</y>
-                        <z>0</z>
-                        <width>512</width>
-                        <height>512</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
