@@ -351,6 +351,12 @@
                 <action id="-26" name="Restart layout" sid="363483572170020" type="System" />
             </actions>
         </event-block>
+        <event-block sid="207562102914568">
+            <conditions>
+                <condition id="8" name="Is flipped" sid="750517886318367" type="HelpArtX" />
+            </conditions>
+            <actions />
+        </event-block>
         <event-block sid="607515074496576">
             <conditions>
                 <condition id="-7" name="Compare instance variable" sid="580686868754586" type="Player">

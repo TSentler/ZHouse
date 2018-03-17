@@ -777,11 +777,5 @@
             </actions>
         </event-block>
         <include>Weapon</include>
-        <event-block sid="533809809196975">
-            <conditions>
-                <condition id="11" name="Collisions enabled" sid="193374848089887" type="JoyArrowUp" />
-            </conditions>
-            <actions />
-        </event-block>
     </events>
 </c2eventsheet>
