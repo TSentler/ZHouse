@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EPlayerController</name>
+    <events>
+        <variable constant="0" name="IsKeyRight" sid="121920036981435" static="0" type="number">0</variable>
+        <variable constant="0" name="IsKeyLeft" sid="548479952226769" static="0" type="number">0</variable>
+        <variable constant="0" name="IsKeyDown" sid="122964582607182" static="0" type="number">0</variable>
+        <variable constant="0" name="IsKeyUp" sid="471429823254891" static="0" type="number">0</variable>
+        <variable constant="0" name="IsKeyShot" sid="351276121992348" static="0" type="number">0</variable>
+        <variable constant="0" name="IsKeyRoll" sid="678209755955921" static="0" type="number">0</variable>
+        <variable constant="0" name="IsBlockKey" sid="143269732206985" static="0" type="number">0</variable>
+        <event-block sid="322040479628056">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="399933757515477" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="426667504184795" type="PlayerCameraHead">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="760001964047338" type="PlayerCameraHead">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="105317379797787">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="808386764928371" type="System">
+                    <param id="0" name="Variable">IsBlockKey</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="810226296362693">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="722685077641099" type="System">
+                            <param id="0" name="Variable">IsKeyUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="931717138061869">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="528372232999977" type="Keyboard">
+                                    <param id="0" name="Key">38 (Up arrow)</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="932252731362910" type="Touch">
+                                    <param id="0" name="Object">JoyArrowUp</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="171541425397264" type="Touch">
+                                    <param id="0" name="Object">JoyArrowUpLeft</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="645049834785323" type="Touch">
+                                    <param id="0" name="Object">JoyArrowUpRight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="117567124337407" type="System">
+                                    <param id="0" name="Variable">IsKeyUp</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="742189078106487">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="295523699614418" type="System">
+                            <param id="0" name="Variable">IsKeyLeft</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="481516958362867">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="809598477511004" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="649067087564138" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="720993918374826" type="System">
+                                    <param id="0" name="Variable">IsKeyLeft</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="793465068193627">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="526321001461535" type="System">
+                            <param id="0" name="Variable">IsKeyRight</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="880497167443564">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="563341491411143" type="Keyboard">
+                                    <param id="0" name="Key">39 (Right arrow)</param>
+                                </condition>
+                                <condition id="2" inverted="1" name="Key is down" sid="217515013815648" type="Keyboard">
+                                    <param id="0" name="Key">37 (Left arrow)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="466809623829343" type="System">
+                                    <param id="0" name="Variable">IsKeyRight</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="585227652321188">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="716374919271759" type="System">
+                            <param id="0" name="Variable">IsKeyUp</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="563320622479604" type="System">
+                            <param id="0" name="Variable">IsKeyUp</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="600074997951424" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="338915915701875">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="129068514635871" type="System">
+                            <param id="0" name="Variable">IsKeyLeft</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="538066505203252" type="System">
+                            <param id="0" name="Variable">IsKeyLeft</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="895184518475047" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="858050670615341" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="274653715032343">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="380052798695979" type="System">
+                            <param id="0" name="Variable">IsKeyRight</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="608188845609479" type="System">
+                            <param id="0" name="Variable">IsKeyRight</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="592205581862748" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="157739350750032" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="502893388739349">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="889559325952188" type="System">
+                            <param id="0" name="Variable">IsKeyDown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="513148962236518">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="512010588860973" type="Keyboard">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="390315567117022" type="Touch">
+                                    <param id="0" name="Object">JoyArrowDown</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="842351467828596" type="Touch">
+                                    <param id="0" name="Object">JoyArrowDownLeft</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="579174113472495" type="Touch">
+                                    <param id="0" name="Object">JoyArrowDownRight</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="654619354399230" type="System">
+                                    <param id="0" name="Variable">IsKeyDown</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="674437916998361">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="357304879584024" type="System">
+                            <param id="0" name="Variable">IsKeyDown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="337522419847909" type="System">
+                            <param id="0" name="Variable">IsKeyDown</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="492292387913679" type="Player">
+                            <param id="0" name="Animation">&quot;Crawl&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="464701323842886" type="Player">
+                            <param id="0" name="Y">Player.Y+CRAWLOFFSETY</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="230837321322310" type="Player">
+                            <param id="0" name="Instance variable">IsCrawl</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="950873208409231">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="272128678782301" type="System">
+                            <param id="0" name="Variable">IsKeyDown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="905351983921438">
+                            <conditions>
+                                <condition id="2" inverted="1" name="Key is down" sid="208863680828115" type="Keyboard">
+                                    <param id="0" name="Key">40 (Down arrow)</param>
+                                </condition>
+                                <condition id="4" inverted="1" name="Is touching object" sid="138143247751596" type="Touch">
+                                    <param id="0" name="Object">JoyArrowDown</param>
+                                </condition>
+                                <condition id="4" inverted="1" name="Is touching object" sid="113027180392858" type="Touch">
+                                    <param id="0" name="Object">JoyArrowDownRight</param>
+                                </condition>
+                                <condition id="4" inverted="1" name="Is touching object" sid="101808033992504" type="Touch">
+                                    <param id="0" name="Object">JoyArrowDownLeft</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="701654366545147" type="System">
+                                    <param id="0" name="Variable">IsKeyDown</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="423401626172008">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="475959126826216" type="System">
+                            <param id="0" name="Variable">IsKeyDown</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="373181972632243" type="System">
+                            <param id="0" name="Variable">IsKeyDown</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="513258704799222" type="Player">
+                            <param id="0" name="Instance variable">IsCrawl</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="137435164401082">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="379520706092564" type="Keyboard">
+                            <param id="0" name="Key">90 (Z)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="590686780258037" type="System">
+                            <param id="0" name="Variable">IsKeyRoll</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="832638939528919">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="713111822988007" type="System">
+                            <param id="0" name="Variable">IsKeyRoll</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="525791976633575" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="980630455011776" type="System">
+                            <param id="0" name="Variable">IsKeyRoll</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="825097696216751" type="Player">
+                            <param id="0" name="Animation">&quot;Roll&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="766209753908782" type="Player">
+                            <param id="0" name="Y">Player.Y+CRAWLOFFSETY</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="448172537345270" type="Player">
+                            <param id="0" name="Instance variable">IsRoll</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="593570016120695" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="692818594036838" type="System">
+                            <param id="0" name="Variable">IsBlockKey</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="650873088838473" type="PDustFoot">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="780841365947251" type="PDustFoot">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="933500451764114" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="936786803999884" type="PDustFoot">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="639412776758955" type="PDustFoot">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="716581038901147" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="510070496338276" type="PDustFoot">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="446742596214511" type="PDustFoot">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="952255216258302" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="262767245193680" type="PDustFoot">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="844228571240192" type="Player">
+                            <param id="0" name="Instance variable">IsRoll</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="472782709050463" type="System">
+                            <param id="0" name="Variable">IsBlockKey</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="836048088052559" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="373131835128032" type="PDustFoot">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="810994560812540" type="PDustFoot">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="817264690357564" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="212978292546046" type="PDustFoot">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="762137460316066">
+            <conditions>
+                <condition id="2" name="Key is down" sid="985707293960319" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+                <condition id="2" inverted="1" name="Key is down" sid="428041963414231" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="422193974600599" type="System">
+                    <param id="0" name="Variable">IsKeyLeft</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="642860870602806">
+            <conditions>
+                <condition id="7" name="Is mirrored" sid="633776593542286" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="553072111539458" type="Player">
+                    <param id="0" name="Instance variable">Forward</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="161725507224348">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="246517231195684" type="Player">
+                            <param id="0" name="Instance variable">Weapon</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="347287343462858" type="ShotGun">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="425004899266066">
+            <conditions>
+                <condition id="-22" name="Else" sid="135609152406829" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="952582241362793" type="Player">
+                    <param id="0" name="Instance variable">Forward</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="756592227141906">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="126642217014097" type="Player">
+                            <param id="0" name="Instance variable">Weapon</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="331972673765074" type="ShotGun">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="463206963933284">
+            <conditions>
+                <condition id="2" name="Is playing" sid="538337317768165" type="Player">
+                    <param id="0" name="Animation">&quot;Roll&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="794188623202405">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="649451594888252" type="Player">
+                            <param id="0" name="Instance variable">IsRoll</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="530699739844059" type="Player">
+                            <param id="0" name="Distance">Player.Forward*5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="679205120265472">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="374657277622933" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="528297030617936">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="989869993736745" type="Player">
+                                    <param id="0" name="Object">CrawlOn</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="281893016203655" type="Player">
+                                    <param id="0" name="Animation">&quot;Crawl&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="823251074835418">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="566477986589840" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="636427192565250" type="Player">
+                                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-2" name="Set Y" sid="549413398943330" type="Player">
+                                    <param id="0" name="Y">Player.Y-CRAWLOFFSETY</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="619431795509824">
+            <conditions>
+                <condition id="2" name="Is playing" sid="194585240915054" type="Player">
+                    <param id="0" name="Animation">&quot;Crawl&quot;</param>
+                </condition>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="432418747980723" type="Player">
+                    <param id="0" name="Instance variable">IsCrawl</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="670938840930704" type="Player">
+                    <param id="0" name="Object">CrawlOn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="484366158438652" type="Player">
+                    <param id="0" name="Animation">&quot;Idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-2" name="Set Y" sid="351665448950286" type="Player">
+                    <param id="0" name="Y">Player.Y-CRAWLOFFSETY</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="810114657935617">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="648105423484696" type="Player">
+                    <param id="0" name="Instance variable">IsFell</param>
+                </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="405737753254395" type="Player" />
+                <condition id="-34" name="Pick by evaluate" sid="995422570163168" type="System">
+                    <param id="0" name="Object">PDustFoot</param>
+                    <param id="1" name="Expression">PDustFoot.IID = 0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="310313213040660" type="Player">
+                    <param id="0" name="Instance variable">IsFell</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="110003350078052" type="PDustFoot">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
+                </action>
+                <action id="0" name="Set spraying" sid="896817357054224" type="PDustFoot">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="336853540391909" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="0" name="Set spraying" sid="554090117686621" type="PDustFoot">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="220000367244177">
+            <conditions>
+                <condition behavior="Platform" id="4" name="Is falling" sid="609373449504731" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="122318487407190" type="Player">
+                    <param id="0" name="Instance variable">IsFell</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

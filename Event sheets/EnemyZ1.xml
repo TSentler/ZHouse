@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EnemyZ1</name>
+    <events>
+        <event-group description="" sid="505474399627507" title="Enemy">
+            <sub-events>
+                <event-block sid="536337441754421">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="857148696968439" type="EnemyZ1">
+                            <param id="0" name="Object">EnemyPatrolPoint</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="320964500353771" type="EnemyZ1">
+                            <param id="0" name="Instance variable">IsAngry</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="835721686586097">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="557208184654612" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="612173062314686" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="719979364498887">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="973584990025784" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="548719421675784" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="905847908701020">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="767096016331026" type="EnemyZ1">
+                            <param id="0" name="Instance variable">A1Rotate</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="149858716767423">
+                            <conditions>
+                                <condition id="-11" inverted="1" name="Is within angle" sid="375923350554361" type="EnemyZ1">
+                                    <param id="0" name="Within">0.5</param>
+                                    <param id="1" name="Angle">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="620891709805569" type="EnemyZ1">
+                                    <param id="0" name="Degrees">EnemyZ1.MoveDir</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="670178867544502">
+                            <conditions>
+                                <condition id="-11" name="Is within angle" sid="165638627198049" type="EnemyZ1">
+                                    <param id="0" name="Within">0.5</param>
+                                    <param id="1" name="Angle">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Rotate clockwise" sid="796361446131950" type="EnemyZ1">
+                                    <param id="0" name="Degrees">0</param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="576526792971536" type="EnemyOutWindow">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="442429877148953" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">A1Rotate</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="417323914854257" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="312539947428367" type="EnemyZ1">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="592161308595974" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">A2Go</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="300341873624395">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="359575326356106" type="EnemyZ1">
+                            <param id="0" name="Instance variable">A2Go</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="408965350500003">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="525274805735142" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="465737617242553" type="EnemyZ1">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="751482669137210" type="EnemyZ1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="443078800220640">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="660187915769098" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="636413496664534" type="EnemyZ1">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action id="7" name="Set mirrored" sid="781120093705223" type="EnemyZ1">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="508679945961151">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="653510229969880" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">IsJump</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="856994204791038">
+                                    <conditions>
+                                        <condition behavior="Platform" id="2" name="Is on floor" sid="348489446985866" type="EnemyZ1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="397099057270872" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">IsJump</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="595247455191968" type="EnemyZ1">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="820342175189543">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="247153831447913" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="406251511489820">
+                                    <conditions>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="494241848150909" type="EnemyZ1">
+                                            <param id="0" name="Side">0</param>
+                                        </condition>
+                                        <condition behavior="Platform" id="10" name="Is by wall" sid="227857680994379" type="EnemyZ1">
+                                            <param id="0" name="Side">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="133655307914767" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">IsJump</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="657335825389864">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="165052061867648" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">IsAngry</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="661019643849549">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="914063022064661" type="EnemyZ1">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="160287979122831" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">MoveDir</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="470589906642376">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="145113596103051" type="EnemyZ1">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="522800100673467" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">MoveDir</param>
+                                            <param id="1" name="Value">-1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="278787417794113">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="773821868822000" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="720596608323312">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="325876079241121" type="System">
+                                            <param id="0" name="First value">distance(Player.X,Player.Y,EnemyZ1.X,EnemyZ1.Y)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">300</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="935869299466900" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">MoveDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">-1</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="971788405957074" type="EnemyZ1">
+                                            <param id="0" name="Comparison">5</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="971069287240037" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">IsAngry</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action disabled="1" id="4" name="Set animation" sid="822458203200151" type="EnemyZ1">
+                                            <param id="0" name="Animation">&quot;run&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" disabled="1" id="1" name="Set max speed" sid="840175501487845" type="EnemyZ1">
+                                            <param id="0" name="Max Speed">300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="687679370887418">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="921797424076508" type="System">
+                                            <param id="0" name="First value">distance(Player.X,Player.Y,EnemyZ1.X,EnemyZ1.Y)</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">300</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="763008395219066" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">MoveDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-1" name="Compare X" sid="439698529083395" type="EnemyZ1">
+                                            <param id="0" name="Comparison">3</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="509934999187217" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">IsAngry</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action disabled="1" id="4" name="Set animation" sid="595051437315029" type="EnemyZ1">
+                                            <param id="0" name="Animation">&quot;run&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="Platform" disabled="1" id="1" name="Set max speed" sid="152007568426630" type="EnemyZ1">
+                                            <param id="0" name="Max Speed">300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="159636404471419">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="977118685212382" type="EnemyZ1">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="498086680620030" type="Player">
+                                    <param id="0" name="Instance variable">IsRoll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="186057157034633" type="Player">
+                                    <param id="0" name="Instance variable">IsDeath</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="969801705165436">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="603472887490716" type="Player">
+                                    <param id="0" name="Instance variable">IsDeath</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="579382194777062" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">A2Go</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="329370527430918">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="875101185374869" type="FPawn">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="768894273090377" type="FPawn" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Weapon</name>
+    <events>
+        <event-block sid="370210902115653">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="418650934857321" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="369811549180535">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="127704157677957" type="Player">
+                            <param id="0" name="Instance variable">Weapon</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="713366228304491" type="ShotGun">
+                            <param id="0" name="Object">Player</param>
+                            <param id="1" name="Image point (optional)">&quot;Weapon&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="432549101840832">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="808528579663495" type="Keyboard">
+                    <param id="0" name="Key">88 (X)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="174444982496195" type="System">
+                    <param id="0" name="Variable">IsKeyShot</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="289777195346362">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="588295179274509" type="System">
+                    <param id="0" name="Variable">IsKeyShot</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="669818049652816" type="System">
+                    <param id="0" name="Variable">IsKeyShot</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="300471709834327">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="924224000036994" type="Player">
+                            <param id="0" name="Instance variable">Weapon</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="956845634150130" type="ShotGun">
+                            <param id="0" name="Object">Bullet</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="Image point">&quot;SpawnBullet&quot;</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="257392152725134" type="Bullet">
+                            <param id="0" name="Angle">random(-2,2)</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="637149799246463" type="Bullet">
+                            <param id="0" name="Speed">800 * Player.Forward</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="305595909653171">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="864501889747548" type="Bullet">
+                    <param id="0" name="Object">SolidSprite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="953051927817793" type="Bullet" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

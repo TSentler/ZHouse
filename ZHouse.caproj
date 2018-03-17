@@ -1,0 +1,1129 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>ZHouse</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>1gdx0q68a53wc</unique-id>
+    <saved-with-version>23900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Rotate" version="1">Rotate</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="hardlight">Hard Light</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>300</width>
+        <height>200</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="House">
+            <object-type name="Crack2" sid="243232228730956">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="138166224843100" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Crack1" sid="592582527468361">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="692792926933787" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Door" sid="339858616232597">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="451993015833499" speed="5">
+                        <frame duration="1" hotspotX="0.166667" hotspotY="0">
+                            <collision-poly>
+                                <point x="0.166667" y="0" />
+                                <point x="0.833333" y="0" />
+                                <point x="0.833333" y="1" />
+                                <point x="0.166667" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HouseBackWall" sid="583561688544540">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="HouseBoards" sid="238917852994894">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="311415477408709">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Platform" sid="854813408616531">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="220306763069743">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="292544829559581" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.526971" y="0" />
+                                <point x="0.78527" y="0.602642" />
+                                <point x="0.883817" y="0.817073" />
+                                <point x="0.813798" y="0.894309" />
+                                <point x="0.714471" y="0.951219" />
+                                <point x="0.463693" y="0.95122" />
+                                <point x="0.319502" y="0.780488" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HouseDoorClose" sid="324953439741006">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="369791081171329" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HouseFloor" sid="854199835407385">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="753597196637145">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="HouseFloorFake" sid="683564996266074">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="HouseLeftWall" sid="755021600015552">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="HouseRightWall" sid="229410874780840">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="HouseRoof" sid="676989308935286">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="836971548001012" speed="5">
+                        <frame duration="1" hotspotX="0.501587" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Window" sid="637622365918271">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Number" sid="126430674658562" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="677452263929257" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Wire" sid="897681138583166">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="804287338034369">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="123444306186349" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="WindowBoardedUp" sid="976032017563375">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Number" sid="318772433514042" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="547984914104285">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="383934540022178" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HouseFloorPhysics" sid="536324424274454">
+                <plugin id="TiledBg" />
+                <instance-variables>
+                    <instance-variable name="TriggerName" sid="421844047734763" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="632574779221096">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="802622864317897">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+        </object-folder>
+        <object-folder name="Backyard">
+            <object-type name="Cloud" sid="322586794571197">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="131513634215211">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="760591339626499" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Dirt" sid="558572166946878">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="274941529737736">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="Fance" sid="490191392634946">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="Grasse" sid="679250221698806">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="490284620032443">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="312421858409045">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="Tree" sid="240435743260036">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="104319842124552" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Furniture">
+            <object-type name="Art1" sid="780549654783671">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Physics" sid="757764896647848">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="801073530995489" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Art2" sid="671364969395900">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="119306692356788" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Art3" sid="349602476100382">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Rotate" sid="275102885127760">
+                        <behavior id="Rotate" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="666398598164965" speed="5">
+                        <frame duration="1" hotspotX="0.0625" hotspotY="0.104167" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Cabinet1" sid="141501494090803">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="630817941301349" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Cabinet2" sid="117903391108314">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="302262669272864" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Cabinet3" sid="428861423845063">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="938116279352762" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Chair" sid="461787037232201">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="946666229007290" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1">
+                            <collision-poly>
+                                <point x="0" y="0" />
+                                <point x="0.666667" y="0" />
+                                <point x="0.666667" y="0.75" />
+                                <point x="0" y="0.75" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Chair2" sid="658721789041368">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="938452252241930" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="1">
+                            <collision-poly>
+                                <point x="0.143229" y="0.166667" />
+                                <point x="0.873264" y="0.177083" />
+                                <point x="0.927083" y="0.875" />
+                                <point x="0.0416667" y="0.916667" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Table" sid="829579310651414">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="357583455276037" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.0546875" y="0.0625" />
+                                <point x="0.942708" y="0.0546875" />
+                                <point x="0.973958" y="0.953125" />
+                                <point x="0.03125" y="0.949219" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TV" sid="261523798511856">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="933488280381164" speed="2">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.484848">
+                            <collision-poly>
+                                <point x="0.0885417" y="0.409091" />
+                                <point x="0.927083" y="0.409091" />
+                                <point x="0.932292" y="0.969697" />
+                                <point x="0.0625" y="0.969697" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.191406" y="0.421875" />
+                                <point x="0.820313" y="0.421875" />
+                                <point x="0.824219" y="1" />
+                                <point x="0.171875" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.191406" y="0.421875" />
+                                <point x="0.820313" y="0.421875" />
+                                <point x="0.824219" y="1" />
+                                <point x="0.171875" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.191406" y="0.421875" />
+                                <point x="0.820313" y="0.421875" />
+                                <point x="0.824219" y="1" />
+                                <point x="0.171875" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="1" name="Broken" pingpong="1" repeatcount="1" repeatto="0" sid="203574777058252" speed="2">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.484848">
+                            <collision-poly>
+                                <point x="0.0885417" y="0.409091" />
+                                <point x="0.927083" y="0.409091" />
+                                <point x="0.932292" y="0.969697" />
+                                <point x="0.0625" y="0.969697" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Chandelier" sid="904679077182791">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="672511697637110">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="466513107115186" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0.0294118" />
+                                <point x="1" y="0.0294118" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="Player" sid="545642236739788">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsDeath" sid="513778043596163" type="number" />
+                <instance-variable name="IsCrawl" sid="792530059550538" type="boolean" />
+                <instance-variable name="IsRoll" sid="196844161554435" type="boolean" />
+                <instance-variable comment="Forward Direction 1 or -1" name="Forward" sid="822110430586293" type="number" />
+                <instance-variable name="IsFell" sid="968044037679725" type="boolean" />
+                <instance-variable name="Weapon" sid="524720278300825" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="395318065983821">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="110732531719883">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="817416095779167">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="836988018030287" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <image-point name="Foot" x="0.5" y="1" />
+                        <image-point name="Weapon" x="0.5" y="0.5" />
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Crawl" pingpong="0" repeatcount="1" repeatto="0" sid="393646099012617" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0">
+                        <image-point name="Foot" x="0.5" y="1" />
+                        <image-point name="Weapon" x="0.5" y="0.625" />
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Roll" pingpong="0" repeatcount="1" repeatto="0" sid="714433077123060" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0">
+                        <image-point name="Foot" x="0.5" y="1" />
+                        <image-point name="Weapon" x="0.5" y="0.5" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="617312668437907">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="CrawlOn" sid="566569607936611">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="size256" sid="203956560074190">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="311070725260667" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PWindowSplinters" sid="414322781139023">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="PlayerCameraHead" sid="117945174480512">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="112576025222557">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="940481555707214">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="894427357111432" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Rock" sid="322747751895964">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="140672588889075">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="883008163957912" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <collision-poly>
+                            <point x="0.132353" y="0.320652" />
+                            <point x="0.715074" y="0.0434784" />
+                            <point x="0.981618" y="0.586957" />
+                            <point x="0.849265" y="0.951087" />
+                            <point x="0.0330882" y="0.929348" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HelpArtArrow" sid="366353561163535">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911080621773764" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Trigger" sid="272629966247073">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="enable" sid="717317888567017" type="boolean" />
+                <instance-variable name="Name" sid="241637743861506" type="string" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="521649346538686" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HelpArtZ" sid="883741382394631">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464455373871156" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemyOutWindow" sid="109163655063745">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsDeath" sid="574812680683113" type="number" />
+                <instance-variable name="IsCrawl" sid="490295093103180" type="boolean" />
+                <instance-variable name="IsRoll" sid="375941643262523" type="boolean" />
+                <instance-variable comment="Forward Direction 1 or -1" name="Forward" sid="548309378762786" type="number" />
+                <instance-variable name="A1Rotate" sid="238326625059065" type="boolean" />
+                <instance-variable name="A2Go" sid="682800564446395" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="632342212828833">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="272744563611239">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="740112357269286" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.96875">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <collision-poly>
+                            <point x="0" y="0.789063" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.964844" />
+                            <point x="0.453125" y="0.962891" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.96875">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <collision-poly>
+                            <point x="0" y="0.804688" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.960938" />
+                            <point x="0.445313" y="0.964844" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PDustBig" sid="319781720915367">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="SunLigth" sid="575190952370989">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="438846924662104" speed="5">
+                    <frame duration="1" hotspotX="-0.09375" hotspotY="0.71875">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.68254" y="0" />
+                            <point x="0.68254" y="0" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PDustFoot" sid="347724932557404">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="EnemyZ1" sid="614760875890177">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsDeath" sid="836524436048230" type="number" />
+                <instance-variable name="IsCrawl" sid="159368100965812" type="boolean" />
+                <instance-variable name="IsRoll" sid="662469095329851" type="boolean" />
+                <instance-variable comment="Forward Direction 1 or -1" name="Forward" sid="230017467478699" type="number" />
+                <instance-variable name="A1Rotate" sid="370029880660119" type="boolean" />
+                <instance-variable name="A2Go" sid="800213206218928" type="boolean" />
+                <instance-variable name="Angry" sid="559684571275054" type="number" />
+                <instance-variable name="MoveDir" sid="591722893424050" type="number" />
+                <instance-variable name="IsAngry" sid="361457523950794" type="boolean" />
+                <instance-variable name="IsJump" sid="982156733506999" type="boolean" />
+                <instance-variable name="TriggerName" sid="236120453005664" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="829236163133444">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="327159171852151">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="402220698688111" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <collision-poly>
+                            <point x="0" y="0.789063" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.964844" />
+                            <point x="0.453125" y="0.962891" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <collision-poly>
+                            <point x="0" y="0.804688" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.960938" />
+                            <point x="0.445313" y="0.964844" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemyPatrolPoint" sid="135029432231256">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="182929444530928" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HelpArtRoll" sid="557924706376801">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="466223125212543" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PBoardSplinters" sid="418826797661319">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="ShotGun" sid="592384553447927">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="862512761351351" speed="5">
+                    <frame duration="1" hotspotX="0.25" hotspotY="0.5">
+                        <image-point name="SpawnBullet" x="0.708333" y="0.3" />
+                        <collision-poly>
+                            <point x="0" y="0.1" />
+                            <point x="0.833333" y="0.1" />
+                            <point x="0.833333" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="169888001861834">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="480316823631597">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="867259919146561" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TTheEnd" sid="491276834367353">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="HelpArtX" sid="787683044576789">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="558953373741016" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HelpJoy" sid="914321541103987">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="212525152568784" speed="5">
+                    <frame duration="1" hotspotX="0.528455" hotspotY="0.368421">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowUp" sid="694516525077723">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="309873143089846" speed="5">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyBtnZ" sid="470845347710313">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="111141411434257" speed="5">
+                    <frame duration="1" hotspotX="-0.333333" hotspotY="0.259259">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyBtnX" sid="741488630904734">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="391153477174914" speed="5">
+                    <frame duration="1" hotspotX="-1.73333" hotspotY="0.257143">
+                        <collision-poly>
+                            <point x="0.966667" y="0.971429" />
+                            <point x="0" y="0.971429" />
+                            <point x="0" y="0" />
+                            <point x="0.966667" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="121636950207804">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Touch" sid="443420888424553">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="JoyArrowDown" sid="282990288456221">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="641763591203675" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowLeft" sid="295212239952385">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="540049938505182" speed="5">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowRight" sid="953082702952065">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="893769478735774" speed="5">
+                    <frame duration="1" hotspotX="0.529412" hotspotY="0.516129">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowUpRight" sid="577224257333000">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="783054271948842" speed="5">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowUpLeft" sid="312622178713074">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="277580419236462" speed="5">
+                    <frame duration="1" hotspotX="0.526316" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowDownLeft" sid="919133216091754">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="393471332386926" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="JoyArrowDownRight" sid="562446099424303">
+            <plugin id="Sprite" />
+            <effects>
+                <effect-type name="HardLight">
+                    <effect id="hardlight" />
+                </effect-type>
+            </effects>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="168590418141039" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.52381">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="572921246918467">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite" sid="838415065516339">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="852798167246619">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="508231301857724" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground2" sid="548412828013318">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Sprite2" sid="861134303568570">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="173665191052286">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="149449216001349">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="551370953470924" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="260208290829968">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="319420231525051">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="675331588203447" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground3" sid="928215031303132">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="FPawn" plugin-id="Sprite" sid="214616970436471">
+            <members>
+                <member>EnemyOutWindow</member>
+                <member>EnemyZ1</member>
+                <member>Player</member>
+            </members>
+        </family>
+        <family name="FParticleStopInit" plugin-id="Particles" sid="872415982640151">
+            <members>
+                <member>PBoardSplinters</member>
+                <member>PDustBig</member>
+                <member>PDustFoot</member>
+                <member>PWindowSplinters</member>
+            </members>
+        </family>
+        <family name="TriggerFallFloor" plugin-id="Sprite" sid="918662478645090">
+            <members>
+                <member>Chair2</member>
+                <member>Chandelier</member>
+                <member>Table</member>
+                <member>TV</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="TriggerName" sid="531820200953490" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics2" sid="291751918422933">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="SolidTiled" plugin-id="TiledBg" sid="162754945402926">
+            <members>
+                <member>HouseFloor</member>
+                <member>HouseFloorFake</member>
+                <member>HouseFloorPhysics</member>
+            </members>
+        </family>
+        <family name="SolidSprite" plugin-id="Sprite" sid="471440997570295">
+            <members>
+                <member>Door</member>
+                <member>EnemyZ1</member>
+                <member>HouseBoards</member>
+                <member>Rock</member>
+                <member>Window</member>
+                <member>WindowBoardedUp</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Lvl1_house.xml</layout>
+        <layout>Lvl2_pole.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>EPlayerController.xml</event-sheet>
+        <event-sheet>EnemyZOutWindow.xml</event-sheet>
+        <event-sheet>EnemyZ1.xml</event-sheet>
+        <event-sheet>Weapon.xml</event-sheet>
+        <event-sheet>Joy.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="34" />
+        <global-instance type="Mouse" uid="150" />
+        <global-instance type="Touch" uid="151">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

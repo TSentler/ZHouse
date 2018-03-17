@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="1">Lvl2_pole</layout>
+        <layout active="1" order="0">Lvl1_house</layout>
+        <event-sheet order="4">Event sheet 2</event-sheet>
+        <event-sheet order="2">Event sheet 1</event-sheet>
+        <event-sheet order="3">EnemyZ1</event-sheet>
+        <event-sheet order="5">EPlayerController</event-sheet>
+        <event-sheet order="6">Weapon</event-sheet>
+        <event-sheet order="7">Joy</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="FPawn" />
+        <family expanded="1" name="FParticleStopInit" />
+        <family expanded="1" name="TriggerFallFloor" />
+        <family expanded="0" name="SolidTiled" />
+        <family expanded="0" name="SolidSprite" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/House/" />
+        <folder expanded="1" path="object-folder/Backyard/" />
+        <folder expanded="1" path="object-folder/Furniture/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Crack2/" />
+        <folder expanded="1" path="animation-folder/Crack1/" />
+        <folder expanded="1" path="animation-folder/Door/" />
+        <folder expanded="1" path="animation-folder/HouseBoards/" />
+        <folder expanded="1" path="animation-folder/HouseDoorClose/" />
+        <folder expanded="1" path="animation-folder/HouseRoof/" />
+        <folder expanded="1" path="animation-folder/Window/" />
+        <folder expanded="1" path="animation-folder/Wire/" />
+        <folder expanded="1" path="animation-folder/WindowBoardedUp/" />
+        <folder expanded="1" path="animation-folder/Cloud/" />
+        <folder expanded="1" path="animation-folder/Tree/" />
+        <folder expanded="1" path="animation-folder/Art1/" />
+        <folder expanded="1" path="animation-folder/Art2/" />
+        <folder expanded="1" path="animation-folder/Art3/" />
+        <folder expanded="1" path="animation-folder/Cabinet1/" />
+        <folder expanded="1" path="animation-folder/Cabinet2/" />
+        <folder expanded="1" path="animation-folder/Cabinet3/" />
+        <folder expanded="1" path="animation-folder/Chair/" />
+        <folder expanded="1" path="animation-folder/Chair2/" />
+        <folder expanded="1" path="animation-folder/Table/" />
+        <folder expanded="1" path="animation-folder/TV/" />
+        <folder expanded="1" path="animation-folder/Chandelier/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/size256/" />
+        <folder expanded="1" path="animation-folder/PlayerCameraHead/" />
+        <folder expanded="1" path="animation-folder/Rock/" />
+        <folder expanded="1" path="animation-folder/HelpArtArrow/" />
+        <folder expanded="1" path="animation-folder/Trigger/" />
+        <folder expanded="1" path="animation-folder/HelpArtZ/" />
+        <folder expanded="1" path="animation-folder/EnemyOutWindow/" />
+        <folder expanded="1" path="animation-folder/SunLigth/" />
+        <folder expanded="1" path="animation-folder/EnemyZ1/" />
+        <folder expanded="1" path="animation-folder/EnemyPatrolPoint/" />
+        <folder expanded="1" path="animation-folder/HelpArtRoll/" />
+        <folder expanded="1" path="animation-folder/ShotGun/" />
+        <folder expanded="1" path="animation-folder/Bullet/" />
+        <folder expanded="1" path="animation-folder/HelpArtX/" />
+        <folder expanded="1" path="animation-folder/HelpJoy/" />
+        <folder expanded="1" path="animation-folder/JoyArrowUp/" />
+        <folder expanded="1" path="animation-folder/JoyBtnZ/" />
+        <folder expanded="1" path="animation-folder/JoyBtnX/" />
+        <folder expanded="1" path="animation-folder/JoyArrowDown/" />
+        <folder expanded="1" path="animation-folder/JoyArrowLeft/" />
+        <folder expanded="1" path="animation-folder/JoyArrowRight/" />
+        <folder expanded="1" path="animation-folder/JoyArrowUpRight/" />
+        <folder expanded="1" path="animation-folder/JoyArrowUpLeft/" />
+        <folder expanded="1" path="animation-folder/JoyArrowDownLeft/" />
+        <folder expanded="1" path="animation-folder/JoyArrowDownRight/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <include>Joy</include>
+        <include>EnemyZ1</include>
+        <variable constant="0" name="ZOutWin" sid="659411649398628" static="0" type="number">0</variable>
+        <include>EnemyZOutWindow</include>
+        <include>EPlayerController</include>
+        <variable constant="0" name="win_i" sid="960254531560774" static="0" type="number">-1</variable>
+        <variable constant="1" name="CRAWLOFFSETY" sid="217327520000338" static="0" type="number">0</variable>
+        <event-block sid="735116022920482">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="570442785065293" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="937969732045003" type="System">
+                    <param id="0" name="Variable">IsBlockKey</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="150810318178267">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="941898989770131" type="System">
+                            <param id="0" name="Object">Window</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="908289302668340" type="System">
+                            <param id="0" name="Variable">win_i</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="984167715498644" type="Window">
+                            <param id="0" name="Instance variable">Number</param>
+                            <param id="1" name="Value">win_i</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="230890541891798">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="901998428055758" type="System">
+                            <param id="0" name="Object">FParticleStopInit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set spraying" sid="370548911115660" type="FParticleStopInit">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="949821910227705">
+                    <conditions>
+                        <condition id="-20" name="Is on mobile device" sid="644531215358297" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="668591793097543" type="System">
+                            <param id="0" name="Layer">&quot;Joy&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="385003369177459" type="HelpJoy">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="665035008316255">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="254353695242673" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="469551425720086" type="System">
+                            <param id="0" name="Layer">&quot;Joy&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="217453190596348" type="HelpJoy">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="119766179504529">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="285942932981973" type="Window">
+                    <param id="0" name="Object">FPawn</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="625413141755542" type="Window">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="680043211542064" type="Window" />
+            </actions>
+            <sub-events>
+                <event-block sid="767159927417480">
+                    <conditions>
+                        <condition id="-34" name="Pick by evaluate" sid="963121355633205" type="System">
+                            <param id="0" name="Object">PWindowSplinters</param>
+                            <param id="1" name="Expression">PWindowSplinters.IID = 0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="696236503099683" type="PWindowSplinters">
+                            <param id="0" name="Object">Window</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="662950630099002" type="PWindowSplinters">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="569885623529910" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="803418759001204" type="PWindowSplinters">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="WinX" sid="194046727381689" static="0" type="number">0</variable>
+                <event-block sid="206723866009029">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="295716236475220" type="Window">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">Player.ImagePointX(0) </param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="888504030091829" type="System">
+                            <param id="0" name="Variable">WinX</param>
+                            <param id="1" name="Value">Window.UID</param>
+                        </action>
+                        <action id="-20" name="Rotate toward angle" sid="704408803795402" type="PWindowSplinters">
+                            <param id="0" name="Degrees">360</param>
+                            <param id="1" name="Angle">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="777969887843025">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="177770373343742" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-20" name="Rotate toward angle" sid="805774500929751" type="PWindowSplinters">
+                            <param id="0" name="Degrees">360</param>
+                            <param id="1" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="664929591829371">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="528226944603554" type="WindowBoardedUp">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="608117553635463" type="WindowBoardedUp" />
+            </actions>
+            <sub-events>
+                <event-block sid="295900766938362">
+                    <conditions>
+                        <condition id="-34" name="Pick by evaluate" sid="235135270304682" type="System">
+                            <param id="0" name="Object">PBoardSplinters</param>
+                            <param id="1" name="Expression">PBoardSplinters.IID = 0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="950994292096014" type="PBoardSplinters">
+                            <param id="0" name="Object">WindowBoardedUp</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="368535824127616" type="PBoardSplinters">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="678190630685923" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="285896531792285" type="PBoardSplinters">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="WinX" sid="316412838343684" static="0" type="number">0</variable>
+                <event-block sid="727654367137640">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="423885384827967" type="WindowBoardedUp">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">Player.ImagePointX(0) </param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="439104567820064" type="System">
+                            <param id="0" name="Variable">WinX</param>
+                            <param id="1" name="Value">Window.UID</param>
+                        </action>
+                        <action id="-20" name="Rotate toward angle" sid="212003696535932" type="PBoardSplinters">
+                            <param id="0" name="Degrees">360</param>
+                            <param id="1" name="Angle">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="445608254693811">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="445071225136836" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-20" name="Rotate toward angle" sid="960393016395999" type="PBoardSplinters">
+                            <param id="0" name="Degrees">360</param>
+                            <param id="1" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="146028084990273">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="481343782279924" type="Player">
+                    <param id="0" name="Object">Trigger</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="811727226723253" type="Trigger">
+                    <param id="0" name="Instance variable">enable</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="181025089620221">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="250289108770755" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;FallRoof&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="511128286613442" type="Art1">
+                            <param id="0" name="Unique ID">78</param>
+                        </condition>
+                        <condition id="-34" name="Pick by evaluate" sid="804737843815260" type="System">
+                            <param id="0" name="Object">PDustBig</param>
+                            <param id="1" name="Expression">PDustBig.IID = 0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="633117855859791" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="372278687038828" type="HouseBoards">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="331359909801036" type="HouseBoards">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="539098641960152" type="PDustBig">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="155742989617412" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="539210106353760" type="PDustBig">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="963994474809880" type="Art1">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="336348204733756">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="342523066935242" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Fall&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="609264639332821" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="972880881158915" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="750604392804461" type="Player">
+                            <param id="0" name="Angle">45</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="216063332414827">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="785635545855410" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ZOutWin&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="572565134993346" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="279731274160658" type="System">
+                            <param id="0" name="Variable">IsBlockKey</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="965791703861376" type="System">
+                            <param id="0" name="Variable">ZOutWin</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="444850315017277" type="Player">
+                            <param id="0" name="Instance variable">IsRoll</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="571762875246129">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="897752740537048" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="997373011031883" type="EnemyOutWindow">
+                                    <param id="0" name="Instance variable">A1Rotate</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-41" name="Wait for signal" sid="915811206251069" type="System">
+                                    <param id="0" name="Tag">&quot;ZOutWin&quot;</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="871053003649741" type="Trigger">
+                                    <param id="0" name="Instance variable">enable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="969983092579427">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="765754940758694" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ArtRotate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="414964485416771" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="294730564259849">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="358751308753481" type="Art3">
+                                    <param id="0" name="Unique ID">97</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="403637897331158" type="Art3">
+                                    <param id="0" name="Speed">120</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="433678637699248" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action behavior="Rotate" id="0" name="Set speed" sid="287583351248775" type="Art3">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="397445647552299">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="595219560258368" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;FallStairs&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="638956068148728" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="420882375530914">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="109755120432449" type="System">
+                                    <param id="0" name="Object">HouseFloorPhysics</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="592610666990988">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="241408718578157" type="HouseFloorPhysics">
+                                            <param id="0" name="Instance variable">TriggerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FallStairs&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Physics" id="21" name="Set immovable" sid="582472160652231" type="HouseFloorPhysics">
+                                            <param id="0" name="Setting">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="995718684753267" type="HouseFloorPhysics">
+                                            <param id="0" name="Instance variable">TriggerName</param>
+                                            <param id="1" name="Value">&quot;DeadlyFallStairs&quot;</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="358061311368534" type="System">
+                                            <param id="0" name="Seconds">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="416418621938931" type="HouseFloorPhysics">
+                                            <param id="0" name="Instance variable">TriggerName</param>
+                                            <param id="1" name="Value">&quot;FallStairs&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="470257141131885">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="287546613971454" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;FallFloor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="147886439290911" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="679426955645075">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="404968102516443" type="System">
+                                    <param id="0" name="Object">Chandelier</param>
+                                    <param id="1" name="Expression">Chandelier.IID=0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="452683449782619" type="Chandelier">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="666239259799856">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="810210599276359" type="System">
+                                    <param id="0" name="Object">HouseFloorPhysics</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="128020161334402">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="686153428437984" type="HouseFloorPhysics">
+                                            <param id="0" name="Instance variable">TriggerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FallFloor&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Physics" id="21" name="Set immovable" sid="248434928428228" type="HouseFloorPhysics">
+                                            <param id="0" name="Setting">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="875514195026310">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="552915019005716" type="System">
+                                    <param id="0" name="Object">TriggerFallFloor</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="599710694773290">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="920763769314135" type="TriggerFallFloor">
+                                            <param id="0" name="Instance variable">TriggerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;FallFloor&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Physics2" id="27" name="Set enabled" sid="497482060145397" type="TriggerFallFloor">
+                                            <param id="0" name="Mode">1</param>
+                                        </action>
+                                        <action behavior="Physics2" id="21" name="Set immovable" sid="270753884460622" type="TriggerFallFloor">
+                                            <param id="0" name="Setting">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="557353541147216">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="670462576868619" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ZRise&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="900180052893775" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="361392817187945">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="379927501616835" type="System">
+                                    <param id="0" name="Object">EnemyZ1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="740029517149797">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="242214474015773" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">TriggerName</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;ZRise&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="858683126847647" type="EnemyZ1">
+                                            <param id="0" name="Instance variable">A1Rotate</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="580997047520434">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="905196084285448" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;GetShotGun&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="414376233368929" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="369719679525873" type="ShotGun">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="898343030390580" type="Player">
+                            <param id="0" name="Instance variable">Weapon</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="845005083194524">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="639272015479198" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;TheEnd&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="994512163465690" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="155987476238959" type="TTheEnd">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="801288519910352" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="495296217117870" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="695433070719086">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="948896871273522" type="Trigger">
+                    <param id="0" name="Object">TV</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="205850119279351" type="Trigger">
+                    <param id="0" name="Instance variable">enable</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="156400984272871" type="Trigger">
+                    <param id="0" name="Instance variable">Name</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;FallFloor2&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="198003267714662" type="Trigger">
+                    <param id="0" name="Instance variable">enable</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="969721109976249" type="TV">
+                    <param id="0" name="Animation">&quot;Broken&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="2" name="Stop" sid="923187898550675" type="TV" />
+            </actions>
+            <sub-events>
+                <event-block sid="161427904744302">
+                    <conditions>
+                        <condition id="-34" name="Pick by evaluate" sid="252700114433041" type="System">
+                            <param id="0" name="Object">PDustBig</param>
+                            <param id="1" name="Expression">PDustBig.IID = 0</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="108683205314845" type="Trigger">
+                            <param id="0" name="Unique ID">7</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="704086924832659" type="PDustBig">
+                            <param id="0" name="Object">Trigger</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="8" name="Set X randomiser" sid="307932547066893" type="PDustBig">
+                            <param id="0" name="X randomiser">270</param>
+                        </action>
+                        <action id="9" name="Set Y randomiser" sid="885545055479229" type="PDustBig">
+                            <param id="0" name="Y randomiser">60</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="844280433596285" type="PDustBig">
+                            <param id="0" name="Y">PDustBig.Y+20</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="357837081171798" type="PDustBig">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="441963007534284" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="0" name="Set spraying" sid="389927441658516" type="PDustBig">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="229450592562469">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="286383897848681" type="Player">
+                    <param id="0" name="Object">HouseFloorPhysics</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="117809327008532" type="HouseFloorPhysics">
+                    <param id="0" name="Instance variable">TriggerName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;DeadlyFallStairs&quot;</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="925905526590399" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="707692465803273" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="710252362576706">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="375769573872000" type="Player">
+                    <param id="0" name="Object">Fance</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="740562280959587" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="195301775095890" type="Player">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action id="-17" name="Move forward" sid="628798173535221" type="Player">
+                    <param id="0" name="Distance">10</param>
+                </action>
+                <action id="-10" name="Set value" sid="156769029751219" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="237380160488573">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="149655090076495" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="978888393637553" type="Player">
+                    <param id="0" name="Angle">90</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="537741572376742" type="Player">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="284522926155403" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="752502262971019" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="403931088054553">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="684635371730387" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="104005644993213" type="Player">
+                    <param id="0" name="Distance">0.2</param>
+                </action>
+                <action id="-16" name="Wait" sid="271276937912135" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="366801800632906" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="262281350260862">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="568582206781787" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="603639321757675" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="354848152966149" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="226923062385347">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="147162715497159" type="Player">
+                    <param id="0" name="Instance variable">IsDeath</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="11" name="Set enabled" sid="338008874465769" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="807634267968809" type="System">
+                    <param id="0" name="Variable">IsBlockKey</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Pin" id="1" name="Unpin" sid="402009106720063" type="PlayerCameraHead" />
+            </actions>
+        </event-block>
+        <include>Weapon</include>
+    </events>
+</c2eventsheet>
