@@ -777,5 +777,15 @@
             </actions>
         </event-block>
         <include>Weapon</include>
+        <event-block sid="275842371851272">
+            <conditions>
+                <condition id="11" name="Collisions enabled" sid="133140840842892" type="HelpArtX" />
+            </conditions>
+            <actions>
+                <action id="3" name="Start" sid="667202719190976" type="HelpJoy">
+                    <param id="0" name="From">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
