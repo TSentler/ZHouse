@@ -777,15 +777,5 @@
             </actions>
         </event-block>
         <include>Weapon</include>
-        <event-block sid="670167567734713">
-            <conditions>
-                <condition id="7" name="Is mirrored" sid="647077036583304" type="JoyBtnZ" />
-            </conditions>
-            <actions>
-                <action id="9" name="Set Y randomiser" sid="882763754021677" type="PDustFoot">
-                    <param id="0" name="Y randomiser">0</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
