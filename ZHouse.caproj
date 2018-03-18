@@ -990,7 +990,7 @@
         <object-type name="Touch" sid="443420888424553">
             <plugin id="Touch" />
         </object-type>
-        <object-type name="TiledBackground" sid="572921246918467">
+        <object-type name="Grassee2" sid="572921246918467">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
@@ -1007,11 +1007,11 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TiledBackground2" sid="548412828013318">
+        <object-type name="DirtDotDecore" sid="548412828013318">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="Sprite2" sid="861134303568570">
+        <object-type name="BrokenBoardWindow" sid="861134303568570">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Solid" sid="173665191052286">
@@ -1027,7 +1027,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Sprite3" sid="260208290829968">
+        <object-type name="SolidInvisible" sid="260208290829968">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Solid" sid="319420231525051">
@@ -1040,9 +1040,30 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="TiledBackground3" sid="928215031303132">
+        <object-type name="LvlBack" sid="928215031303132">
             <plugin id="TiledBg" />
             <texture />
+        </object-type>
+        <object-type name="Barrel" sid="935286281042393">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="187401524456383">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="959286395011325" speed="5">
+                    <frame duration="1" hotspotX="0.642857" hotspotY="0.75" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="CarBig" sid="641321459142242">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="774965688974684" speed="5">
+                    <frame duration="1" hotspotX="0.547009" hotspotY="0.52459" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>

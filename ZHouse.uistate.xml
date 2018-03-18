@@ -10,12 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="1">Lvl1_house</layout>
-        <layout order="2">Lvl2_pole</layout>
-        <event-sheet active="1" order="3">ESLvl1</event-sheet>
-        <event-sheet order="4">EnemyZ1</event-sheet>
-        <event-sheet order="5">ESLvl2</event-sheet>
-        <event-sheet order="6">EPlayerController</event-sheet>
+        <layout order="0">Lvl1_house</layout>
+        <layout active="1" order="1">Lvl2_pole</layout>
+        <event-sheet order="2">ESLvl1</event-sheet>
+        <event-sheet order="3">EnemyZ1</event-sheet>
+        <event-sheet order="4">ESLvl2</event-sheet>
+        <event-sheet order="5">EPlayerController</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -93,7 +93,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/ShotGun/" />
         <folder expanded="1" path="animation-folder/Bullet/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
-        <folder expanded="1" path="animation-folder/Sprite2/" />
-        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/BrokenBoardWindow/" />
+        <folder expanded="1" path="animation-folder/SolidInvisible/" />
+        <folder expanded="1" path="animation-folder/Barrel/" />
+        <folder expanded="1" path="animation-folder/CarBig/" />
     </folders-expanded>
 </c2uistate>
