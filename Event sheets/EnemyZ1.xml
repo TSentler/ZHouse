@@ -307,7 +307,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="186057157034633" type="Player">
                                     <param id="0" name="Instance variable">IsDeath</param>
-                                    <param id="1" name="Value">3</param>
+                                    <param id="1" name="Value">2</param>
                                 </action>
                             </actions>
                         </event-block>
