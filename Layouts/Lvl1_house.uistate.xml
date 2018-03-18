@@ -36,6 +36,5 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layer locked="0" name="FinishScreen" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="StartScreen" parallax-in-editor="0" visible="1" />
         <layer locked="0" name="Fade" parallax-in-editor="0" visible="1" />
-        <layer locked="0" name="Hide" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>
