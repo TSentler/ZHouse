@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ESLvlGameMode</name>
     <events>
+        <variable comment="+1 = fade on; -1 = fade off" constant="0" name="FadeOnOff" sid="896231041638145" static="0" type="number">0</variable>
         <variable constant="1" name="CRAWLOFFSETY" sid="217327520000338" static="0" type="number">0</variable>
         <variable constant="0" name="win_i" sid="960254531560774" static="0" type="number">-1</variable>
         <include>Joy</include>
@@ -16,6 +17,10 @@
                 <action id="-9" name="Set value" sid="250203951806302" type="System">
                     <param id="0" name="Variable">IsBlockKey</param>
                     <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="679682544557120" type="System">
+                    <param id="0" name="Variable">FadeOnOff</param>
+                    <param id="1" name="Value">-1</param>
                 </action>
             </actions>
             <sub-events>
@@ -263,6 +268,10 @@
                                     <param id="0" name="Instance variable">enable</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="946233638798903" type="System">
+                                    <param id="0" name="Variable">FadeOnOff</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
                                 <action disabled="1" id="-32" name="Set layer effect parameter" sid="317054347546827" type="System">
                                     <param id="0" name="Layer">&quot;HUD&quot;</param>
                                     <param id="1" name="Effect">&quot;Darken&quot;</param>
@@ -271,6 +280,10 @@
                                 </action>
                                 <action behavior="Platform" id="0" name="Set ignoring input" sid="750610413857757" type="Player">
                                     <param id="0" name="Input">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="141117565926394" type="System">
+                                    <param id="0" name="Group name">&quot;FadeOn&quot;</param>
+                                    <param id="1" name="State">1</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="619476910775813" type="System">
                                     <param id="0" name="Variable">IsBlockKey</param>
@@ -319,6 +332,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="397168302300719" type="System">
+                            <param id="0" name="Variable">FadeOnOff</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="-16" name="Wait" sid="359454822553390" type="System">
                             <param id="0" name="Seconds">1.0</param>
                         </action>
@@ -343,6 +360,73 @@
                         </action>
                         <action behavior="Pin" id="1" name="Unpin" sid="724044437181585" type="PlayerCameraHead" />
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="371342647984286" title="FadeOn">
+            <sub-events>
+                <event-block sid="769878071136958">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="386747499675654" type="System">
+                            <param id="0" name="Variable">FadeOnOff</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="438598946326421">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="596813792935468" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="704394647109524" type="System">
+                                    <param id="0" name="Layer">&quot;Fade&quot;</param>
+                                    <param id="1" name="Opacity">LayerOpacity(&quot;Fade&quot;)+dt*60*FadeOnOff</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="355366260257959">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="417475971561169" type="System">
+                                    <param id="0" name="Variable">FadeOnOff</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-17" inverted="1" name="Compare opacity" sid="526432453402466" type="System">
+                                    <param id="0" name="Layer">&quot;Fade&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Opacity">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="359264149262790" type="System">
+                                    <param id="0" name="Variable">FadeOnOff</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="590153500040627">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="324095729576790" type="System">
+                                    <param id="0" name="Variable">FadeOnOff</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-17" inverted="1" name="Compare opacity" sid="443644779945158" type="System">
+                                    <param id="0" name="Layer">&quot;Fade&quot;</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Opacity">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="863844361355396" type="System">
+                                    <param id="0" name="Variable">FadeOnOff</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
