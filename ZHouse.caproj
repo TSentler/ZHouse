@@ -1107,6 +1107,8 @@
         <event-sheet>Weapon.xml</event-sheet>
         <event-sheet>Joy.xml</event-sheet>
         <event-sheet>ESLvl2.xml</event-sheet>
+        <event-sheet>ESLvlGameMode.xml</event-sheet>
+        <event-sheet>ESLvlGameModeAfter.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="34" />

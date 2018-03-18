@@ -3,216 +3,9 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ESLvl1</name>
     <events>
-        <include>Joy</include>
-        <include>EnemyZ1</include>
+        <include>ESLvlGameMode</include>
         <variable constant="0" name="ZOutWin" sid="659411649398628" static="0" type="number">0</variable>
         <include>EnemyZOutWindow</include>
-        <include>EPlayerController</include>
-        <variable constant="0" name="win_i" sid="960254531560774" static="0" type="number">-1</variable>
-        <variable constant="1" name="CRAWLOFFSETY" sid="217327520000338" static="0" type="number">0</variable>
-        <event-block sid="735116022920482">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="570442785065293" type="System" />
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="937969732045003" type="System">
-                    <param id="0" name="Variable">IsBlockKey</param>
-                    <param id="1" name="Value">0</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block sid="150810318178267">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="941898989770131" type="System">
-                            <param id="0" name="Object">Window</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-10" name="Add to" sid="908289302668340" type="System">
-                            <param id="0" name="Variable">win_i</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="984167715498644" type="Window">
-                            <param id="0" name="Instance variable">Number</param>
-                            <param id="1" name="Value">win_i</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="230890541891798">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="901998428055758" type="System">
-                            <param id="0" name="Object">FParticleStopInit</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set spraying" sid="370548911115660" type="FParticleStopInit">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="949821910227705">
-                    <conditions>
-                        <condition id="-20" name="Is on mobile device" sid="644531215358297" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set layer visible" sid="668591793097543" type="System">
-                            <param id="0" name="Layer">&quot;Joy&quot;</param>
-                            <param id="1" name="Visibility">1</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="385003369177459" type="HelpJoy">
-                            <param id="0" name="Visibility">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="665035008316255">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="254353695242673" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set layer visible" sid="469551425720086" type="System">
-                            <param id="0" name="Layer">&quot;Joy&quot;</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="217453190596348" type="HelpJoy">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block any="1" sid="119766179504529">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="285942932981973" type="Window">
-                    <param id="0" name="Object">FPawn</param>
-                </condition>
-                <condition id="0" name="On collision with another object" sid="625413141755542" type="Window">
-                    <param id="0" name="Object">Bullet</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="680043211542064" type="Window" />
-            </actions>
-            <sub-events>
-                <event-block sid="767159927417480">
-                    <conditions>
-                        <condition id="-34" name="Pick by evaluate" sid="963121355633205" type="System">
-                            <param id="0" name="Object">PWindowSplinters</param>
-                            <param id="1" name="Expression">PWindowSplinters.IID = 0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set position to another object" sid="696236503099683" type="PWindowSplinters">
-                            <param id="0" name="Object">Window</param>
-                            <param id="1" name="Image point (optional)">0</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="662950630099002" type="PWindowSplinters">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="569885623529910" type="System">
-                            <param id="0" name="Seconds">0.1</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="803418759001204" type="PWindowSplinters">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <variable constant="0" name="WinX" sid="194046727381689" static="0" type="number">0</variable>
-                <event-block sid="206723866009029">
-                    <conditions>
-                        <condition id="-1" name="Compare X" sid="295716236475220" type="Window">
-                            <param id="0" name="Comparison">5</param>
-                            <param id="1" name="X co-ordinate">Player.ImagePointX(0) </param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="888504030091829" type="System">
-                            <param id="0" name="Variable">WinX</param>
-                            <param id="1" name="Value">Window.UID</param>
-                        </action>
-                        <action id="-20" name="Rotate toward angle" sid="704408803795402" type="PWindowSplinters">
-                            <param id="0" name="Degrees">360</param>
-                            <param id="1" name="Angle">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="777969887843025">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="177770373343742" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-20" name="Rotate toward angle" sid="805774500929751" type="PWindowSplinters">
-                            <param id="0" name="Degrees">360</param>
-                            <param id="1" name="Angle">180</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block any="1" sid="664929591829371">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="528226944603554" type="WindowBoardedUp">
-                    <param id="0" name="Object">Bullet</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="608117553635463" type="WindowBoardedUp" />
-            </actions>
-            <sub-events>
-                <event-block sid="295900766938362">
-                    <conditions>
-                        <condition id="-34" name="Pick by evaluate" sid="235135270304682" type="System">
-                            <param id="0" name="Object">PBoardSplinters</param>
-                            <param id="1" name="Expression">PBoardSplinters.IID = 0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set position to another object" sid="950994292096014" type="PBoardSplinters">
-                            <param id="0" name="Object">WindowBoardedUp</param>
-                            <param id="1" name="Image point (optional)">0</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="368535824127616" type="PBoardSplinters">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="678190630685923" type="System">
-                            <param id="0" name="Seconds">0.1</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="285896531792285" type="PBoardSplinters">
-                            <param id="0" name="State">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <variable constant="0" name="WinX" sid="316412838343684" static="0" type="number">0</variable>
-                <event-block sid="727654367137640">
-                    <conditions>
-                        <condition id="-1" name="Compare X" sid="423885384827967" type="WindowBoardedUp">
-                            <param id="0" name="Comparison">5</param>
-                            <param id="1" name="X co-ordinate">Player.ImagePointX(0) </param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="439104567820064" type="System">
-                            <param id="0" name="Variable">WinX</param>
-                            <param id="1" name="Value">Window.UID</param>
-                        </action>
-                        <action id="-20" name="Rotate toward angle" sid="212003696535932" type="PBoardSplinters">
-                            <param id="0" name="Degrees">360</param>
-                            <param id="1" name="Angle">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="445608254693811">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="445071225136836" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-20" name="Rotate toward angle" sid="960393016395999" type="PBoardSplinters">
-                            <param id="0" name="Degrees">360</param>
-                            <param id="1" name="Angle">180</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
         <event-block sid="146028084990273">
             <conditions>
                 <condition id="1" name="Is overlapping another object" sid="481343782279924" type="Player">
@@ -681,7 +474,7 @@
             <actions>
                 <action id="-10" name="Set value" sid="707692465803273" type="Player">
                     <param id="0" name="Instance variable">IsDeath</param>
-                    <param id="1" name="Value">3</param>
+                    <param id="1" name="Value">2</param>
                 </action>
             </actions>
         </event-block>
@@ -705,31 +498,7 @@
                 </action>
                 <action id="-10" name="Set value" sid="156769029751219" type="Player">
                     <param id="0" name="Instance variable">IsDeath</param>
-                    <param id="1" name="Value">2</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="237380160488573">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="149655090076495" type="Player">
-                    <param id="0" name="Instance variable">IsDeath</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-8" name="Set angle" sid="978888393637553" type="Player">
-                    <param id="0" name="Angle">90</param>
-                </action>
-                <action behavior="Physics" id="27" name="Set enabled" sid="537741572376742" type="Player">
-                    <param id="0" name="Mode">1</param>
-                </action>
-                <action id="-16" name="Wait" sid="284522926155403" type="System">
-                    <param id="0" name="Seconds">1</param>
-                </action>
-                <action id="-10" name="Set value" sid="752502262971019" type="Player">
-                    <param id="0" name="Instance variable">IsDeath</param>
-                    <param id="1" name="Value">1</param>
+                    <param id="1" name="Value">3</param>
                 </action>
             </actions>
         </event-block>
@@ -738,7 +507,7 @@
                 <condition id="-7" name="Compare instance variable" sid="684635371730387" type="Player">
                     <param id="0" name="Instance variable">IsDeath</param>
                     <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">2</param>
+                    <param id="2" name="Value">3</param>
                 </condition>
             </conditions>
             <actions>
@@ -754,40 +523,6 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="262281350260862">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="568582206781787" type="Player">
-                    <param id="0" name="Instance variable">IsDeath</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-16" name="Wait" sid="603639321757675" type="System">
-                    <param id="0" name="Seconds">1.0</param>
-                </action>
-                <action id="-26" name="Restart layout" sid="354848152966149" type="System" />
-            </actions>
-        </event-block>
-        <event-block sid="226923062385347">
-            <conditions>
-                <condition id="-7" name="Compare instance variable" sid="147162715497159" type="Player">
-                    <param id="0" name="Instance variable">IsDeath</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="11" name="Set enabled" sid="338008874465769" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="807634267968809" type="System">
-                    <param id="0" name="Variable">IsBlockKey</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-                <action behavior="Pin" id="1" name="Unpin" sid="402009106720063" type="PlayerCameraHead" />
-            </actions>
-        </event-block>
-        <include>Weapon</include>
+        <include>ESLvlGameModeAfter</include>
     </events>
 </c2eventsheet>
