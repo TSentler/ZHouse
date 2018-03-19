@@ -833,66 +833,84 @@
                 <plugin id="Touch" />
             </object-type>
         </object-folder>
-        <object-type name="Player" sid="545642236739788">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="IsDeath" sid="513778043596163" type="number" />
-                <instance-variable name="IsCrawl" sid="792530059550538" type="boolean" />
-                <instance-variable name="IsRoll" sid="196844161554435" type="boolean" />
-                <instance-variable comment="Forward Direction 1 or -1" name="Forward" sid="822110430586293" type="number" />
-                <instance-variable name="IsFell" sid="968044037679725" type="boolean" />
-                <instance-variable name="Weapon" sid="524720278300825" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Platform" sid="110732531719883">
-                    <behavior id="Platform" />
-                </behavior-type>
-                <behavior-type name="Physics" sid="817416095779167">
-                    <behavior id="Physics" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="836988018030287" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Head" x="0.5" y="-1.25" />
-                        <image-point name="CrawlCheck" x="0.5" y="0" />
-                        <image-point name="Foot" x="0.5" y="1" />
-                        <image-point name="Weapon" x="0.5" y="0.5" />
-                    </frame>
-                </animation>
-                <animation framecount="1" loop="0" name="Crawl" pingpong="0" repeatcount="1" repeatto="0" sid="393646099012617" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0">
-                        <image-point name="Foot" x="0.5" y="1" />
-                        <image-point name="Weapon" x="0.5" y="0.625" />
-                    </frame>
-                </animation>
-                <animation framecount="1" loop="0" name="Roll" pingpong="0" repeatcount="1" repeatto="0" sid="714433077123060" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0">
-                        <image-point name="Foot" x="0.5" y="1" />
-                        <image-point name="Weapon" x="0.5" y="0.5" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
+        <object-folder name="Player">
+            <object-type name="Player" sid="545642236739788">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="IsDeath" sid="513778043596163" type="number" />
+                    <instance-variable name="IsCrawl" sid="792530059550538" type="boolean" />
+                    <instance-variable name="IsRoll" sid="196844161554435" type="boolean" />
+                    <instance-variable comment="Forward Direction 1 or -1" name="Forward" sid="822110430586293" type="number" />
+                    <instance-variable name="IsFell" sid="968044037679725" type="boolean" />
+                    <instance-variable name="Weapon" sid="524720278300825" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="110732531719883">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="817416095779167">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="836988018030287" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Head" x="0.5" y="-1.25" />
+                            <image-point name="CrawlCheck" x="0.5" y="0" />
+                            <image-point name="Foot" x="0.5" y="1" />
+                            <image-point name="Weapon" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Crawl" pingpong="0" repeatcount="1" repeatto="0" sid="393646099012617" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0">
+                            <image-point name="Foot" x="0.5" y="1" />
+                            <image-point name="Weapon" x="0.5" y="0.625" />
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="Roll" pingpong="0" repeatcount="1" repeatto="0" sid="714433077123060" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0">
+                            <image-point name="Foot" x="0.5" y="1" />
+                            <image-point name="Weapon" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ShotGun" sid="592384553447927">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="862512761351351" speed="5">
+                        <frame duration="1" hotspotX="0.25" hotspotY="0.5">
+                            <image-point name="SpawnBullet" x="0.708333" y="0.3" />
+                            <collision-poly>
+                                <point x="0" y="0.1" />
+                                <point x="0.833333" y="0.1" />
+                                <point x="0.833333" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="PlayerCameraHead" sid="117945174480512">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="112576025222557">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="ScrollTo" sid="940481555707214">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="894427357111432" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="CrawlOn" sid="566569607936611">
             <plugin id="TiledBg" />
             <texture />
-        </object-type>
-        <object-type name="PlayerCameraHead" sid="117945174480512">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Pin" sid="112576025222557">
-                    <behavior id="Pin" />
-                </behavior-type>
-                <behavior-type name="ScrollTo" sid="940481555707214">
-                    <behavior id="scrollto" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="894427357111432" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="Trigger" sid="272629966247073">
             <plugin id="Sprite" />
@@ -992,22 +1010,6 @@
                             <point x="1" y="0" />
                             <point x="1" y="0.960938" />
                             <point x="0.445313" y="0.964844" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="ShotGun" sid="592384553447927">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="862512761351351" speed="5">
-                    <frame duration="1" hotspotX="0.25" hotspotY="0.5">
-                        <image-point name="SpawnBullet" x="0.708333" y="0.3" />
-                        <collision-poly>
-                            <point x="0" y="0.1" />
-                            <point x="0.833333" y="0.1" />
-                            <point x="0.833333" y="1" />
-                            <point x="0" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -1162,6 +1164,7 @@
     <layout-folder>
         <layout>Lvl1_house.xml</layout>
         <layout>Lvl2_pole.xml</layout>
+        <layout>Test.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>ESLvl1.xml</event-sheet>
@@ -1173,6 +1176,7 @@
         <event-sheet>ESLvl2.xml</event-sheet>
         <event-sheet>ESLvlGameMode.xml</event-sheet>
         <event-sheet>ESLvlGameModeAfter.xml</event-sheet>
+        <event-sheet>ESLvlTest.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="34" />

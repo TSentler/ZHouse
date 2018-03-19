@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ESLvlTest</name>
+    <events>
+        <include>ESLvlGameMode</include>
+        <event-block sid="243892385989542">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="348017385563110" type="Player">
+                    <param id="0" name="Object">Trigger</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="229499245822327" type="Trigger">
+                    <param id="0" name="Instance variable">enable</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="742911964779344">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="416929012814085" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;GetShotGun&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="955815978558662" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <include>ESLvlGameModeAfter</include>
+    </events>
+</c2eventsheet>
