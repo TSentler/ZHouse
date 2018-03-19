@@ -190,7 +190,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <variable constant="0" name="WinX" sid="678579690766323" static="0" type="number">0</variable>
                         <event-block sid="937405840770002">
                             <conditions>
                                 <condition id="-1" name="Compare X" sid="527216218947296" type="WindowBoardedUp">
@@ -199,10 +198,6 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="836588306348793" type="System">
-                                    <param id="0" name="Variable">WinX</param>
-                                    <param id="1" name="Value">Window.UID</param>
-                                </action>
                                 <action id="-20" name="Rotate toward angle" sid="562724524533799" type="PBoardSplinters">
                                     <param id="0" name="Degrees">360</param>
                                     <param id="1" name="Angle">0</param>

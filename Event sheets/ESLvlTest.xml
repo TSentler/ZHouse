@@ -3,7 +3,108 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ESLvlTest</name>
     <events>
+        <variable constant="0" name="PBoomIndex" sid="881525087978116" static="0" type="number">0</variable>
         <include>ESLvlGameMode</include>
+        <event-group description="" sid="658876629213760" title="Barrel">
+            <sub-events>
+                <event-block sid="583907271916717">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="202808339701311" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="146448903457323" type="BarrelPart1" />
+                        <action id="-9" name="Destroy" sid="461759431468811" type="BarrelPart2" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="143355412478713">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="440684949626252" type="Barrel">
+                            <param id="0" name="Object">Bullet</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="985119484226277" type="Barrel" />
+                        <action id="-3" name="Create object" sid="458160146000060" type="System">
+                            <param id="0" name="Object to create">BarrelPart1</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Barrel.ImagePointX(0)</param>
+                            <param id="3" name="Y">Barrel.ImagePointY(0)</param>
+                        </action>
+                        <action behavior="Physics" disabled="1" id="3" name="Apply impulse" sid="482345890167462" type="BarrelPart1">
+                            <param id="0" name="Impulse X">(80+random(20))*int(random(-1,1))</param>
+                            <param id="1" name="Implulse Y">-80-random(20)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="158286591878012" type="System">
+                            <param id="0" name="Object to create">BarrelPart2</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Barrel.ImagePointX(0)</param>
+                            <param id="3" name="Y">Barrel.ImagePointY(0)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="130423555552100" type="System">
+                            <param id="0" name="Object to create">BarrelPart2</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">Barrel.ImagePointX(0)</param>
+                            <param id="3" name="Y">Barrel.ImagePointY(0)</param>
+                        </action>
+                        <action behavior="Physics" id="3" name="Apply impulse" sid="542402507173594" type="BarrelPart2">
+                            <param id="0" name="Impulse X">(0.3+random(0.1))*int(random(-1,2))</param>
+                            <param id="1" name="Implulse Y">-0.3-random(0.2)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Physics" disabled="1" id="3" name="Apply impulse" sid="568297200978672" type="BarrelPart1">
+                            <param id="0" name="Impulse X">1</param>
+                            <param id="1" name="Implulse Y">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="976636567305760">
+                            <conditions>
+                                <condition id="-34" name="Pick by evaluate" sid="928906367941608" type="System">
+                                    <param id="0" name="Object">PBoom</param>
+                                    <param id="1" name="Expression">PBoom.IID = PBoomIndex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="150037044068803" type="System">
+                                    <param id="0" name="Variable">PBoomIndex</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="555145116644464" type="PBoom">
+                                    <param id="0" name="Object">Barrel</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="0" name="Set spraying" sid="769296341167611" type="PBoom">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="933837820077050" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="0" name="Set spraying" sid="198328425823084" type="PBoom">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="791148400209393">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="715945028819301" type="System">
+                            <param id="0" name="Variable">PBoomIndex</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">PBoom.Count</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="548094395068565" type="System">
+                            <param id="0" name="Variable">PBoomIndex</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-block sid="243892385989542">
             <conditions>
                 <condition id="1" name="Is overlapping another object" sid="348017385563110" type="Player">

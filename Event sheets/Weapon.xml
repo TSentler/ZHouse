@@ -78,6 +78,16 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="588852357018030">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="431236289672314" type="FPawn">
+                    <param id="0" name="Object">Bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="494352465993643" type="FPawn" />
+            </actions>
+        </event-block>
         <event-block sid="305595909653171">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="864501889747548" type="Bullet">

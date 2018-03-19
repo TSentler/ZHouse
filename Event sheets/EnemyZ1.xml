@@ -330,15 +330,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="329370527430918">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="875101185374869" type="FPawn">
-                    <param id="0" name="Object">Bullet</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="768894273090377" type="FPawn" />
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
