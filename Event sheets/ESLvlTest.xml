@@ -48,7 +48,7 @@
                             <param id="3" name="Y">Barrel.ImagePointY(0)</param>
                         </action>
                         <action behavior="Physics" id="3" name="Apply impulse" sid="542402507173594" type="BarrelPart2">
-                            <param id="0" name="Impulse X">(0.3+random(0.1))*int(random(-1,2))</param>
+                            <param id="0" name="Impulse X">(0.3+random(0.1))*int(random(-1,1))</param>
                             <param id="1" name="Implulse Y">-0.3-random(0.2)</param>
                             <param id="2" name="Image point">0</param>
                         </action>

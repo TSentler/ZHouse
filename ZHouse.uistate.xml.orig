@@ -11,8 +11,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Lvl1_house</layout>
+<<<<<<< HEAD
         <layout order="1">Lvl2_pole</layout>
         <layout order="7">Test</layout>
+=======
+        <layout active="1" order="1">Lvl2_pole</layout>
+        <layout order="8">Test</layout>
+>>>>>>> cb4ec5b733b23a621426791931cfc8dedc99c9e1
         <event-sheet order="2">ESLvl1</event-sheet>
         <event-sheet order="3">ESLvl2</event-sheet>
         <event-sheet order="4">EnemyZ1</event-sheet>
@@ -108,6 +113,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/PlaformInvisible/" />
         <folder expanded="1" path="animation-folder/kepotcka/" />
         <folder expanded="1" path="animation-folder/EnemyPatrolPoint/" />
+<<<<<<< HEAD
+        <folder expanded="1" path="animation-folder/BarrelPart1/" />
+        <folder expanded="1" path="animation-folder/BarrelPart2/" />
+=======
         <folder expanded="1" path="animation-folder/Bag/" />
         <folder expanded="1" path="animation-folder/Tent/" />
         <folder expanded="1" path="animation-folder/Smoke/" />
@@ -115,7 +124,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Tube/" />
         <folder expanded="1" path="animation-folder/Wiring/" />
         <folder expanded="1" path="animation-folder/Detal1/" />
-        <folder expanded="1" path="animation-folder/BarrelPart1/" />
-        <folder expanded="1" path="animation-folder/BarrelPart2/" />
+>>>>>>> cb4ec5b733b23a621426791931cfc8dedc99c9e1
     </folders-expanded>
 </c2uistate>
