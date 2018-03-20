@@ -80,22 +80,34 @@
         </event-block>
         <event-block sid="588852357018030">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="431236289672314" type="FPawn">
+                <condition id="0" name="On collision with another object" sid="431236289672314" type="FEnemies">
                     <param id="0" name="Object">Bullet</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="494352465993643" type="FPawn" />
+                <action id="-9" name="Destroy" sid="494352465993643" type="FEnemies" />
+                <action id="-9" name="Destroy" sid="871590302204960" type="Bullet" />
             </actions>
         </event-block>
         <event-block sid="305595909653171">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="864501889747548" type="Bullet">
-                    <param id="0" name="Object">SolidSprite</param>
+                    <param id="0" name="Object">FSolidSprite</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="953051927817793" type="Bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="402654502073078">
+            <conditions>
+                <condition id="-18" name="On created" sid="585320955200824" type="Bullet" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="317833902124327" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-9" name="Destroy" sid="622093631208729" type="Bullet" />
             </actions>
         </event-block>
     </events>

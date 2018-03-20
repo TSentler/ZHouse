@@ -258,6 +258,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <TriggerName></TriggerName>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -302,7 +305,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="PBoom" uid="225">
+                <instance type="PBoom" uid="34">
                     <properties>
                         <rate>30</rate>
                         <spray-cone>360</spray-cone>
@@ -341,13 +344,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Barrel" uid="226">
+                <instance type="Barrel" uid="150">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <TriggerName></TriggerName>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -370,7 +376,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="PBoom" uid="227">
+                <instance type="PBoom" uid="151">
                     <properties>
                         <rate>30</rate>
                         <spray-cone>360</spray-cone>
@@ -409,13 +415,16 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Barrel" uid="228">
+                <instance type="Barrel" uid="269">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <TriggerName>CarTree</TriggerName>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -438,7 +447,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="PBoom" uid="229">
+                <instance type="PBoom" uid="270">
                     <properties>
                         <rate>30</rate>
                         <spray-cone>360</spray-cone>
@@ -477,7 +486,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="BarrelPart1" uid="230">
+                <instance type="BarrelPart1" uid="271">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -515,7 +524,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="BarrelPart2" uid="232">
+                <instance type="BarrelPart2" uid="272">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>

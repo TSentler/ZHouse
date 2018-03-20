@@ -3,8 +3,57 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EnemyZ1</name>
     <events>
+        <variable constant="0" name="SpawnedEnemyZ1" sid="759082547816452" static="0" type="number">0</variable>
         <event-group description="" sid="505474399627507" title="Enemy">
             <sub-events>
+                <event-block sid="111632726551090">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="661035626846008" type="SpawnerEnemyZ1">
+                            <param id="0" name="Instance variable">isSpawn</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="749846837405923" type="System">
+                            <param id="0" name="Interval (seconds)">0.01+random(0.2)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="548743659501329" type="System">
+                            <param id="0" name="Variable">SpawnedEnemyZ1</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">SpawnerEnemyZ1.MaxEnemySpawn</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="557110840189928" type="System">
+                            <param id="0" name="Variable">SpawnedEnemyZ1</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="459424656260140" type="System">
+                            <param id="0" name="Object to create">EnemyZ1</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">SpawnerEnemyZ1.X</param>
+                            <param id="3" name="Y">SpawnerEnemyZ1.Y</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="580416181273855" type="EnemyZ1">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="558557736785343" type="EnemyZ1">
+                            <param id="0" name="Instance variable">IsAngry</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="420934207741143" type="EnemyZ1">
+                            <param id="0" name="Instance variable">MoveDir</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="338225454027521" type="EnemyZ1">
+                            <param id="0" name="Instance variable">A2Go</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="960243344780039" type="EnemyZ1">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="441707294261151" type="EnemyZ1">
+                            <param id="0" name="Max Speed">120</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="536337441754421">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="857148696968439" type="EnemyZ1">
@@ -330,5 +379,18 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="565279918101801">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="867130081303319" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="760368327329480" type="System">
+                    <param id="0" name="Variable">SpawnedEnemyZ1</param>
+                    <param id="1" name="Value">EnemyZ1.Count</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

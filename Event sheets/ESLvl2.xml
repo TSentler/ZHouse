@@ -6,7 +6,7 @@
         <include>ESLvlGameMode</include>
         <event-block sid="929627560512220">
             <conditions>
-                <condition id="1" name="Is overlapping another object" sid="594583563661332" type="Player">
+                <condition id="1" name="Is overlapping another object" sid="594583563661332" type="EnemyZ1">
                     <param id="0" name="Object">Trigger</param>
                 </condition>
                 <condition id="-8" name="Is boolean instance variable set" sid="107146266037170" type="Trigger">
@@ -20,18 +20,382 @@
                         <condition id="-7" name="Compare instance variable" sid="778239580741966" type="Trigger">
                             <param id="0" name="Instance variable">Name</param>
                             <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Death2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="739366808798151" type="SpawnerEnemyZ1" />
+                        <action id="-9" name="Destroy" sid="862916899409296" type="EnemyZ1" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="362623691455216">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="726273692453025" type="Player">
+                    <param id="0" name="Object">Trigger</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="188666162253662" type="Trigger">
+                    <param id="0" name="Instance variable">enable</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="411558211741673">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="300797431743106" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;new&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-13" name="Set boolean" sid="448267252198009" type="Trigger">
+                        <action id="-13" name="Set boolean" sid="934462071587782" type="Trigger">
                             <param id="0" name="Instance variable">enable</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="670530610760153">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="258834103812666" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;NowCanExlode&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="254805371537515" type="SolidInvisible">
+                            <param id="0" name="Unique ID">283</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="848532944814561" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="461565818746436" type="SolidInvisible" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="584768395335648" title="Barrel">
+            <sub-events>
+                <event-block sid="686994713298434">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="883106226805267" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="953603266925948" type="BarrelPart1" />
+                        <action id="-9" name="Destroy" sid="705860240603196" type="BarrelPart2" />
+                        <action behavior="Pin" id="0" name="Pin to object" sid="739870133292902" type="Smoke">
+                            <param id="0" name="Pin to">CarBig</param>
+                            <param id="1" name="Mode">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="407805836006390">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="907854064680438" type="System">
+                                    <param id="0" name="Object">Fire</param>
+                                    <param id="1" name="Expression">Fire.PinName</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">&quot;CarBig&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="963107646829594" type="Fire">
+                                    <param id="0" name="Pin to">CarBig</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="BarrelName" sid="352317586384116" static="0" type="text"></variable>
+                <event-block any="1" sid="292274863996003">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="745815800194434" type="Barrel">
+                            <param id="0" name="Object">Bullet</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="615767095167616" type="System">
+                            <param id="0" name="Variable">BarrelName</param>
+                            <param id="1" name="Value">Barrel.TriggerName</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="460869982688206">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="483113531427742" type="System">
+                                    <param id="0" name="Object">Barrel</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="790671774914527">
+                                    <conditions>
+                                        <condition id="-11" name="For Each" sid="151827782348579" type="System">
+                                            <param id="0" name="Object">Barrel</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="564008777790453">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="493633155371262" type="Barrel">
+                                                    <param id="0" name="Instance variable">TriggerName</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">BarrelName</param>
+                                                </condition>
+                                                <condition id="-34" name="Pick by evaluate" sid="228322123921659" type="System">
+                                                    <param id="0" name="Object">PBoom</param>
+                                                    <param id="1" name="Expression">PBoom.IID = PBoomIndex</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="742815823178548" type="System">
+                                                    <param id="0" name="Object to create">BarrelPart1</param>
+                                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                                    <param id="2" name="X">Barrel.ImagePointX(0)</param>
+                                                    <param id="3" name="Y">Barrel.ImagePointY(0)</param>
+                                                </action>
+                                                <action behavior="Physics" disabled="1" id="3" name="Apply impulse" sid="360292906233100" type="BarrelPart1">
+                                                    <param id="0" name="Impulse X">(80+random(20))*int(random(-1,1))</param>
+                                                    <param id="1" name="Implulse Y">-80-random(20)</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="556857003992535" type="System">
+                                                    <param id="0" name="Object to create">BarrelPart2</param>
+                                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                                    <param id="2" name="X">Barrel.ImagePointX(0)</param>
+                                                    <param id="3" name="Y">Barrel.ImagePointY(0)</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="115512784497430" type="System">
+                                                    <param id="0" name="Object to create">BarrelPart2</param>
+                                                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                                                    <param id="2" name="X">Barrel.ImagePointX(0)</param>
+                                                    <param id="3" name="Y">Barrel.ImagePointY(0)</param>
+                                                </action>
+                                                <action behavior="Physics" id="3" name="Apply impulse" sid="603805572796736" type="BarrelPart2">
+                                                    <param id="0" name="Impulse X">(0.3+random(0.1))*int(random(-1,1))</param>
+                                                    <param id="1" name="Implulse Y">-0.3-random(0.2)</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action behavior="Physics" disabled="1" id="3" name="Apply impulse" sid="820802078346826" type="BarrelPart1">
+                                                    <param id="0" name="Impulse X">1</param>
+                                                    <param id="1" name="Implulse Y">1</param>
+                                                    <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="163467215304604" type="System">
+                                                    <param id="0" name="Variable">PBoomIndex</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="-4" name="Set position to another object" sid="178678979821559" type="PBoom">
+                                                    <param id="0" name="Object">Barrel</param>
+                                                    <param id="1" name="Image point (optional)">0</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="515312821767042" type="Barrel" />
+                                                <action id="0" name="Set spraying" sid="537141810647001" type="PBoom">
+                                                    <param id="0" name="State">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="892563562611952" type="System">
+                                                    <param id="0" name="Seconds">1</param>
+                                                </action>
+                                                <action id="0" name="Set spraying" sid="890449660399758" type="PBoom">
+                                                    <param id="0" name="State">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="233346878270735">
+                                            <conditions>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="931229691158366" type="System">
+                                                    <param id="0" name="Variable">PBoomIndex</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">PBoom.Count</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="104341962602727" type="System">
+                                                    <param id="0" name="Variable">PBoomIndex</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="949641271807166">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="867622679044178" type="System">
+                                    <param id="0" name="Variable">BarrelName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;CarTree&quot;</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="603197298777157" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-26" name="Move to layer" sid="709403619697623" type="CarBig">
+                                    <param id="0" name="Layer">&quot;Game&quot;</param>
+                                </action>
+                                <action behavior="Physics" id="21" name="Set immovable" sid="835799954669871" type="CarBig">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                                <action behavior="Physics" id="3" name="Apply impulse" sid="484259856288611" type="CarBig">
+                                    <param id="0" name="Impulse X">-20*(2+random(2))</param>
+                                    <param id="1" name="Implulse Y">-20*(20+random(0.2))</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="Physics" id="9" name="Set angular velocity" sid="144494693749932" type="CarBig">
+                                    <param id="0" name="Angular velocity">-100</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="301403676125344" type="BarrelNoSolid" />
+                                <action id="-15" name="Set visible" sid="140564108238945" type="Smoke">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="505120416077832" type="Fire">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="598186559555003">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="212454887393886" type="System">
+                                            <param id="0" name="Object">Trigger</param>
+                                            <param id="1" name="Expression">Trigger.Name</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">&quot;NowCanExlode&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="918546356772373">
+                                            <conditions>
+                                                <condition id="-1" name="Compare X" sid="375061499393448" type="Trigger">
+                                                    <param id="0" name="Comparison">3</param>
+                                                    <param id="1" name="X co-ordinate">Player.X+10</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="196695641047542" type="Player">
+                                                    <param id="0" name="Instance variable">IsDeath</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="229931394974008">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="940707688171593" type="System">
+                                            <param id="0" name="Object">Fire</param>
+                                            <param id="1" name="Expression">Fire.PinName</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">&quot;CarBig&quot;</param>
+                                        </condition>
+                                        <condition id="-33" name="Pick by comparison" sid="514614336843937" type="System">
+                                            <param id="0" name="Object">Smoke</param>
+                                            <param id="1" name="Expression">Fire.PinName</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">&quot;CarBig&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-24" name="Move to top" sid="736186848245799" type="Fire" />
+                                        <action id="-24" name="Move to top" sid="218970872882121" type="Smoke" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="638394864538924">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="883339476234307" type="SolidInvisible">
+                                            <param id="0" name="Unique ID">175</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="798632626250337" type="SolidInvisible" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="647339062506713">
+                                    <conditions>
+                                        <condition id="-33" name="Pick by comparison" sid="821015624869038" type="System">
+                                            <param id="0" name="Object">TreeTimber</param>
+                                            <param id="1" name="Expression">TreeTimber.TriggerName</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">&quot;CarTree&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="895928380104243" type="TreeTimber" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="119861313052848">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="343039526344786" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="715702152204842" type="SpawnerEnemyZ1">
+                                            <param id="0" name="Instance variable">isSpawn</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="444532430821148">
+                    <conditions>
+                        <condition behavior="Physics" id="1" inverted="1" name="Compare velocity" sid="962248295048070" type="CarBig">
+                            <param id="0" name="Which">0</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Physics" id="2" inverted="1" name="Compare angular velocity" sid="198303277165529" type="CarBig">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Value">0</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="246780763563068" type="CarBig">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="769130246897614" type="Player">
+                            <param id="0" name="Instance variable">IsDeath</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="752564429023544">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="672198873054483" type="BarrelPart1">
+                            <param id="0" name="Object">Grasse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="368839796253744" type="BarrelPart1">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="906198469519235">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="825774053468663" type="BarrelPart2">
+                            <param id="0" name="Object">Grasse</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="830072575354026" type="BarrelPart2">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <include>ESLvlGameModeAfter</include>
+        <event-block sid="260543432072423">
+            <conditions />
+            <actions />
+        </event-block>
     </events>
 </c2eventsheet>

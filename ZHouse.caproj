@@ -299,7 +299,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464261046418474" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.515625" hotspotY="0.357143" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -323,6 +323,38 @@
                                 <point x="0" y="0" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="CleftBottom" sid="741863597611252">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="962446123352709" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.6" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TreeLeaf" sid="468219980688251">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="990697246529578" speed="5">
+                        <frame duration="1" hotspotX="0.492063" hotspotY="0.655367" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="TreeTimber" sid="203461590525511">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="TriggerName" sid="520545347444243" type="string" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Physics" sid="752157023601381">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="139003065086886" speed="5">
+                        <frame duration="1" hotspotX="0.526316" hotspotY="0" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -794,6 +826,10 @@
                 <plugin id="Particles" />
                 <texture />
             </object-type>
+            <object-type name="PBoom" sid="725405752608846">
+                <plugin id="Particles" />
+                <texture />
+            </object-type>
         </object-folder>
         <object-folder name="Camping">
             <object-type name="BoneFire" sid="895555030492990">
@@ -817,6 +853,14 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="229496290067316" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Bag" sid="548489959987738">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="134736457024563" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -907,6 +951,19 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Bullet" sid="169888001861834">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="480316823631597">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="867259919146561" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-type name="CrawlOn" sid="566569607936611">
             <plugin id="TiledBg" />
@@ -983,9 +1040,6 @@
                 <instance-variable name="TriggerName" sid="236120453005664" type="string" />
             </instance-variables>
             <behaviors>
-                <behavior-type name="BoundToLayout" sid="829236163133444">
-                    <behavior id="bound" />
-                </behavior-type>
                 <behavior-type name="Platform" sid="327159171852151">
                     <behavior id="Platform" />
                 </behavior-type>
@@ -1015,19 +1069,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Bullet" sid="169888001861834">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="480316823631597">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="867259919146561" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="TTheEnd" sid="491276834367353">
             <plugin id="Text" />
         </object-type>
@@ -1046,6 +1087,9 @@
         </object-type>
         <object-type name="Barrel" sid="935286281042393">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="TriggerName" sid="907616812098248" type="string" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="187401524456383">
                     <behavior id="solid" />
@@ -1059,10 +1103,14 @@
         </object-type>
         <object-type name="CarBig" sid="641321459142242">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Physics" sid="364909701684675">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
-                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="774965688974684" speed="5">
-                    <frame duration="1" hotspotX="0.547009" hotspotY="0.52459" />
-                    <frame duration="1" hotspotX="0.547009" hotspotY="0.52459" />
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="774965688974684" speed="5">
+                    <frame duration="1" hotspotX="0.931624" hotspotY="0.672131" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -1111,14 +1159,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Bag" sid="548489959987738">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="134736457024563" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Tent" sid="627355017481621">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1132,6 +1172,14 @@
         </object-type>
         <object-type name="Smoke" sid="797066005140697">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="PinName" sid="149218525892637" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="963206089027438">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="526237737139327" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -1184,10 +1232,6 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="PBoom" sid="725405752608846">
-            <plugin id="Particles" />
-            <texture />
-        </object-type>
         <object-type name="BarrelPart1" sid="383858628497401">
             <plugin id="Sprite" />
             <behaviors>
@@ -1221,6 +1265,35 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Fire" sid="521562765089758">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="PinName" sid="147838634767052" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="979730462645255">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="902804958186513" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.526316" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.526316" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpawnerEnemyZ1" sid="918644078482835">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="isSpawn" sid="225782541784110" type="boolean" />
+                <instance-variable name="MaxEnemySpawn" sid="312414585491230" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="317576825572977" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="FPawn" plugin-id="Sprite" sid="214616970436471">
@@ -1239,7 +1312,7 @@
                 <member>PWindowSplinters</member>
             </members>
         </family>
-        <family name="TriggerFallFloor" plugin-id="Sprite" sid="918662478645090">
+        <family name="FTriggerFallFloor" plugin-id="Sprite" sid="918662478645090">
             <members>
                 <member>Chair2</member>
                 <member>Chandelier</member>
@@ -1255,21 +1328,28 @@
                 </behavior-type>
             </behaviors>
         </family>
-        <family name="SolidTiled" plugin-id="TiledBg" sid="162754945402926">
+        <family name="FSolidTiled" plugin-id="TiledBg" sid="162754945402926">
             <members>
                 <member>HouseFloor</member>
                 <member>HouseFloorFake</member>
                 <member>HouseFloorPhysics</member>
             </members>
         </family>
-        <family name="SolidSprite" plugin-id="Sprite" sid="471440997570295">
+        <family name="FSolidSprite" plugin-id="Sprite" sid="471440997570295">
             <members>
+                <member>Barrel</member>
                 <member>Door</member>
                 <member>EnemyZ1</member>
                 <member>HouseBoards</member>
                 <member>Rock</member>
+                <member>SolidInvisible</member>
                 <member>Window</member>
                 <member>WindowBoardedUp</member>
+            </members>
+        </family>
+        <family name="FEnemies" plugin-id="Sprite" sid="273038259968258">
+            <members>
+                <member>EnemyZ1</member>
             </members>
         </family>
     </families>
