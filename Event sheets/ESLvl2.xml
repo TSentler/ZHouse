@@ -32,7 +32,7 @@
         </event-block>
         <event-block sid="362623691455216">
             <conditions>
-                <condition id="1" name="Is overlapping another object" sid="726273692453025" type="Player">
+                <condition id="0" name="On collision with another object" sid="726273692453025" type="Player">
                     <param id="0" name="Object">Trigger</param>
                 </condition>
                 <condition id="-8" name="Is boolean instance variable set" sid="188666162253662" type="Trigger">
@@ -332,7 +332,7 @@
                                     <conditions />
                                     <actions>
                                         <action id="-16" name="Wait" sid="343039526344786" type="System">
-                                            <param id="0" name="Seconds">1.0</param>
+                                            <param id="0" name="Seconds">5</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="715702152204842" type="SpawnerEnemyZ1">
                                             <param id="0" name="Instance variable">isSpawn</param>

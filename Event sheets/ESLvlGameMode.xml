@@ -222,6 +222,66 @@
         </event-group>
         <event-group description="" sid="179523245223824" title="PlayerBehaviour">
             <sub-events>
+                <event-block sid="190894930935707">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="905485663057875" type="Player">
+                            <param id="0" name="Object">Trigger</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="526924564154796" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="616665760475881">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="501127865807973" type="Trigger">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;PlayerHide&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="573459221559766" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">IsAngry</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="442033842829666" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="758756271576898" type="Player">
+                                    <param id="0" name="Instance variable">IsHide</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="300547117001791">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="206604215857462" type="Player">
+                            <param id="0" name="Instance variable">IsHide</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="857374717766370" type="Player">
+                            <param id="0" name="Object">Trigger</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="551936843322242" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="143360693091937" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;PlayerHide&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="507468708574927" type="Player">
+                            <param id="0" name="Instance variable">IsHide</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="163680561793239">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="357526968762190" type="Player">

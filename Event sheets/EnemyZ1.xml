@@ -277,6 +277,9 @@
                         <event-block sid="278787417794113">
                             <conditions>
                                 <condition id="-22" name="Else" sid="773821868822000" type="System" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="636034872393274" type="Player">
+                                    <param id="0" name="Instance variable">IsHide</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -351,6 +354,9 @@
                                 </condition>
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="498086680620030" type="Player">
                                     <param id="0" name="Instance variable">IsRoll</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="321521281098234" type="Player">
+                                    <param id="0" name="Instance variable">IsHide</param>
                                 </condition>
                             </conditions>
                             <actions>

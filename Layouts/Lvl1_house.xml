@@ -2413,6 +2413,7 @@
                         <Forward>1</Forward>
                         <IsFell>false</IsFell>
                         <Weapon>0</Weapon>
+                        <IsHide>false</IsHide>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">

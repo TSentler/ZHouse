@@ -887,6 +887,7 @@
                     <instance-variable comment="Forward Direction 1 or -1" name="Forward" sid="822110430586293" type="number" />
                     <instance-variable name="IsFell" sid="968044037679725" type="boolean" />
                     <instance-variable name="Weapon" sid="524720278300825" type="number" />
+                    <instance-variable name="IsHide" sid="971813433830567" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Platform" sid="110732531719883">
