@@ -10,9 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Lvl1_house</layout>
+        <layout active="1" order="0">Lvl1_house</layout>
         <layout order="1">Lvl2_pole</layout>
-        <layout active="1" order="9">Lvl3_bunker</layout>
+        <layout order="9">Lvl3_bunker</layout>
         <event-sheet order="2">ESLvl1</event-sheet>
         <event-sheet order="3">ESLvl2</event-sheet>
         <event-sheet order="4">EnemyZ1</event-sheet>
