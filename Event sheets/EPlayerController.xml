@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EPlayerController</name>
     <events>
+        <variable constant="0" name="TimeStopRoll" sid="572695620600258" static="0" type="number">0</variable>
         <variable constant="0" name="IsKeyRight" sid="121920036981435" static="0" type="number">0</variable>
         <variable constant="0" name="IsKeyLeft" sid="548479952226769" static="0" type="number">0</variable>
         <variable constant="0" name="IsKeyDown" sid="122964582607182" static="0" type="number">0</variable>
@@ -343,82 +344,77 @@
                             <param id="0" name="Variable">IsBlockKey</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-4" name="Set position to another object" sid="650873088838473" type="PDustFoot">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="780841365947251" type="PDustFoot">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="933500451764114" type="System">
-                            <param id="0" name="Seconds">0.1</param>
-                        </action>
-                        <action id="-4" name="Set position to another object" sid="936786803999884" type="PDustFoot">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="639412776758955" type="PDustFoot">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="716581038901147" type="System">
-                            <param id="0" name="Seconds">0.1</param>
-                        </action>
-                        <action id="-4" name="Set position to another object" sid="510070496338276" type="PDustFoot">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="446742596214511" type="PDustFoot">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="952255216258302" type="System">
-                            <param id="0" name="Seconds">0.1</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="262767245193680" type="PDustFoot">
-                            <param id="0" name="State">0</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="844228571240192" type="Player">
-                            <param id="0" name="Instance variable">IsRoll</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="472782709050463" type="System">
-                            <param id="0" name="Variable">IsBlockKey</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Platform" id="0" name="Set ignoring input" sid="836048088052559" type="Player">
-                            <param id="0" name="Input">0</param>
-                        </action>
-                        <action id="-4" name="Set position to another object" sid="373131835128032" type="PDustFoot">
-                            <param id="0" name="Object">Player</param>
-                            <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="810994560812540" type="PDustFoot">
-                            <param id="0" name="State">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="817264690357564" type="System">
-                            <param id="0" name="Seconds">0.1</param>
-                        </action>
-                        <action id="0" name="Set spraying" sid="212978292546046" type="PDustFoot">
-                            <param id="0" name="State">0</param>
+                        <action id="-9" name="Set value" sid="765516746600710" type="System">
+                            <param id="0" name="Variable">TimeStopRoll</param>
+                            <param id="1" name="Value">time+0.3</param>
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="493799503126233">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="869745705305838" type="Player">
+                            <param id="0" name="Instance variable">Weapon</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="741912171867633">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="289258744396404" type="Keyboard">
+                                    <param id="0" name="Key">88 (X)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="749959933969407" type="System">
+                                    <param id="0" name="Variable">IsKeyShot</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="269792037014229">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="679820585157310" type="System">
+                                    <param id="0" name="Variable">IsKeyShot</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="712950237909189" type="System">
+                                    <param id="0" name="Variable">IsKeyShot</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="922940448599597">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="537323398510670" type="Player">
+                                            <param id="0" name="Instance variable">Weapon</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="232794705386426" type="ShotGun">
+                                            <param id="0" name="Object">Bullet</param>
+                                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                                            <param id="2" name="Image point">&quot;SpawnBullet&quot;</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="259383481524844" type="Bullet">
+                                            <param id="0" name="Angle">random(-2,2)</param>
+                                        </action>
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="846308864290723" type="Bullet">
+                                            <param id="0" name="Speed">800 * Player.Forward</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="762137460316066">
-            <conditions>
-                <condition id="2" name="Key is down" sid="985707293960319" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
-                </condition>
-                <condition id="2" inverted="1" name="Key is down" sid="428041963414231" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="422193974600599" type="System">
-                    <param id="0" name="Variable">IsKeyLeft</param>
-                    <param id="1" name="Value">1</param>
-                </action>
-            </actions>
         </event-block>
         <event-block sid="642860870602806">
             <conditions>
@@ -493,6 +489,48 @@
                             <param id="0" name="Distance">Player.Forward*5</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="189257243478822">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="363236402703577" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="504985056904375" type="PDustFoot">
+                                    <param id="0" name="Object">Player</param>
+                                    <param id="1" name="Image point (optional)">&quot;Foot&quot;</param>
+                                </action>
+                                <action id="0" name="Set spraying" sid="548599842047274" type="PDustFoot">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="614753237720051">
+                            <conditions>
+                                <condition id="-7" name="Compare time" sid="343027913846221" type="System">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Time (seconds)">TimeStopRoll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set spraying" sid="583423034012201" type="PDustFoot">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="742957358770934" type="Player">
+                                    <param id="0" name="Instance variable">IsRoll</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="308603223692499" type="System">
+                                    <param id="0" name="Variable">IsBlockKey</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="664046758419909" type="Player">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="679205120265472">
                     <conditions>
@@ -592,6 +630,42 @@
                 <action id="-13" name="Set boolean" sid="122318487407190" type="Player">
                     <param id="0" name="Instance variable">IsFell</param>
                     <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="657973339283103">
+            <conditions>
+                <condition id="0" name="On function" sid="801709585042232" type="Function">
+                    <param id="0" name="Name">&quot;StopPlayerMovement&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="954768205375584" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="860899265795789" type="System">
+                    <param id="0" name="Variable">IsBlockKey</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="383419687770112" type="Player">
+                    <param id="0" name="Instance variable">IsRoll</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="603755544088641">
+            <conditions>
+                <condition id="0" name="On function" sid="710552715536305" type="Function">
+                    <param id="0" name="Name">&quot;ResetPlayerMovement&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="990318156101208" type="Player">
+                    <param id="0" name="Input">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="351402562231412" type="System">
+                    <param id="0" name="Variable">IsBlockKey</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>

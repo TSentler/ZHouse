@@ -10,6 +10,7 @@
     <unique-id>1gdx0q68a53wc</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
@@ -235,11 +236,6 @@
             </object-type>
             <object-type name="Dirt" sid="558572166946878">
                 <plugin id="TiledBg" />
-                <behaviors>
-                    <behavior-type name="Solid" sid="274941529737736">
-                        <behavior id="solid" />
-                    </behavior-type>
-                </behaviors>
                 <texture />
             </object-type>
             <object-type name="Fance" sid="490191392634946">
@@ -355,6 +351,30 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="139003065086886" speed="5">
                         <frame duration="1" hotspotX="0.526316" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="GrasseStepFall" sid="949931312097867">
+                <plugin id="TiledBg" />
+                <instance-variables>
+                    <instance-variable name="isExpectsStep" sid="281927194080337" type="boolean" />
+                    <instance-variable name="isFall" sid="723120984951161" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="363031628738020">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Physics" sid="987637290863369">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
+                <texture />
+            </object-type>
+            <object-type name="DirtSmall" sid="227684369603311">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="117481431639240" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -925,7 +945,7 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="862512761351351" speed="5">
                         <frame duration="1" hotspotX="0.25" hotspotY="0.5">
-                            <image-point name="SpawnBullet" x="0.708333" y="0.3" />
+                            <image-point name="SpawnBullet" x="0.916667" y="0.3" />
                             <collision-poly>
                                 <point x="0" y="0.1" />
                                 <point x="0.833333" y="0.1" />
@@ -938,6 +958,9 @@
             </object-type>
             <object-type name="PlayerCameraHead" sid="117945174480512">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="TriggerName" sid="542930884605441" type="string" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Pin" sid="112576025222557">
                         <behavior id="Pin" />
@@ -1079,6 +1102,9 @@
                 <behavior-type name="Solid" sid="319420231525051">
                     <behavior id="solid" />
                 </behavior-type>
+                <behavior-type name="Physics" sid="405898767872051">
+                    <behavior id="Physics" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="675331588203447" speed="5">
@@ -1111,7 +1137,9 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="774965688974684" speed="5">
-                    <frame duration="1" hotspotX="0.931624" hotspotY="0.672131" />
+                    <frame duration="1" hotspotX="0.931624" hotspotY="0.672131">
+                        <image-point name="PBoom" x="0.290598" y="0.655738" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -1189,14 +1217,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="DirtSmall" sid="227684369603311">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="117481431639240" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="Tube" sid="687434892206928">
             <plugin id="Sprite" />
             <animation-folder>
@@ -1227,6 +1247,14 @@
         </object-type>
         <object-type name="BunkerWall" sid="712987252051425">
             <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="109558187855314">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="683499243794437">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
             <texture />
         </object-type>
         <object-type name="BunkerBack" sid="755940664986409">
@@ -1295,12 +1323,47 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="EnemyZ1Fake" sid="128864151359991">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="587568788779488" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <collision-poly>
+                            <point x="0" y="0.789063" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.964844" />
+                            <point x="0.453125" y="0.962891" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0" hotspotY="1">
+                        <image-point name="Head" x="0.5" y="-1.25" />
+                        <image-point name="CrawlCheck" x="0.5" y="0" />
+                        <collision-poly>
+                            <point x="0" y="0.804688" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.960938" />
+                            <point x="0.445313" y="0.964844" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BunkerWallFake" sid="843607625946814">
+            <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Function" sid="289380395327252">
+            <plugin id="Function" />
+        </object-type>
     </object-folder>
     <families>
         <family name="FPawn" plugin-id="Sprite" sid="214616970436471">
             <members>
                 <member>EnemyOutWindow</member>
                 <member>EnemyZ1</member>
+                <member>EnemyZ1Fake</member>
                 <member>Player</member>
             </members>
         </family>
@@ -1341,6 +1404,7 @@
                 <member>Barrel</member>
                 <member>Door</member>
                 <member>EnemyZ1</member>
+                <member>EnemyZ1Fake</member>
                 <member>HouseBoards</member>
                 <member>Rock</member>
                 <member>SolidInvisible</member>
@@ -1351,7 +1415,24 @@
         <family name="FEnemies" plugin-id="Sprite" sid="273038259968258">
             <members>
                 <member>EnemyZ1</member>
+                <member>EnemyZ1Fake</member>
             </members>
+        </family>
+        <family name="FGarbage" plugin-id="Sprite" sid="208548158113321">
+            <members>
+                <member>Detal1</member>
+                <member>DirtSmall</member>
+                <member>Tube</member>
+                <member>Wiring</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="TriggerName" sid="326282819218774" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics2" sid="998397156050764">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
@@ -1381,6 +1462,7 @@
                 <use-mouse-input>Yes</use-mouse-input>
             </properties>
         </global-instance>
+        <global-instance type="Function" uid="370" />
     </global-instances>
     <sounds-folder />
     <music-folder />

@@ -46,13 +46,45 @@
                         <condition id="-7" name="Compare instance variable" sid="300797431743106" type="Trigger">
                             <param id="0" name="Instance variable">Name</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;new&quot;</param>
+                            <param id="2" name="Value">&quot;CutScene1&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-13" name="Set boolean" sid="934462071587782" type="Trigger">
                             <param id="0" name="Instance variable">enable</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="600464803713424" type="Function">
+                            <param id="0" name="Name">&quot;StopPlayerMovement&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="Platform" disabled="1" id="11" name="Set enabled" sid="954569626118898" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Physics" disabled="1" id="27" name="Set enabled" sid="715585161172441" type="Player">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="231362964075479" type="Function">
+                            <param id="0" name="Name">&quot;CS1_SowCamp1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="430884220821949" type="System">
+                            <param id="0" name="Tag">&quot;CS1_Fall1&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="878038364956813" type="Function">
+                            <param id="0" name="Name">&quot;CS1_Fall1&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-16" name="Wait" sid="242234963303146" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="388755968236563" type="PlayerCameraHead">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">3</param>
+                        </action>
+                        <action id="0" name="Call function" sid="249685001309974" type="Function">
+                            <param id="0" name="Name">&quot;CS1_Fall2&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -205,21 +237,23 @@
                                                     <param id="0" name="State">0</param>
                                                 </action>
                                             </actions>
-                                        </event-block>
-                                        <event-block sid="233346878270735">
-                                            <conditions>
-                                                <condition id="-14" inverted="1" name="Compare variable" sid="931229691158366" type="System">
-                                                    <param id="0" name="Variable">PBoomIndex</param>
-                                                    <param id="1" name="Comparison">2</param>
-                                                    <param id="2" name="Value">PBoom.Count</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-9" name="Set value" sid="104341962602727" type="System">
-                                                    <param id="0" name="Variable">PBoomIndex</param>
-                                                    <param id="1" name="Value">0</param>
-                                                </action>
-                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="233346878270735">
+                                                    <conditions>
+                                                        <condition id="-14" inverted="1" name="Compare variable" sid="931229691158366" type="System">
+                                                            <param id="0" name="Variable">PBoomIndex</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">PBoom.Count</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="104341962602727" type="System">
+                                                            <param id="0" name="Variable">PBoomIndex</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -258,6 +292,50 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <event-block sid="829597474465085">
+                                    <conditions>
+                                        <condition id="-34" name="Pick by evaluate" sid="574286419931542" type="System">
+                                            <param id="0" name="Object">PBoom</param>
+                                            <param id="1" name="Expression">PBoom.IID = PBoomIndex</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="664253758583561" type="System">
+                                            <param id="0" name="Variable">PBoomIndex</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-4" name="Set position to another object" sid="117339002005340" type="PBoom">
+                                            <param id="0" name="Object">CarBig</param>
+                                            <param id="1" name="Image point (optional)">&quot;PBoom&quot;</param>
+                                        </action>
+                                        <action id="0" name="Set spraying" sid="947581403709049" type="PBoom">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="265984666451628" type="System">
+                                            <param id="0" name="Seconds">1</param>
+                                        </action>
+                                        <action id="0" name="Set spraying" sid="135113648314827" type="PBoom">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="976664371972703">
+                                            <conditions>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="105489968816170" type="System">
+                                                    <param id="0" name="Variable">PBoomIndex</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">PBoom.Count</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="753316090614990" type="System">
+                                                    <param id="0" name="Variable">PBoomIndex</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block sid="598186559555003">
                                     <conditions>
                                         <condition id="-33" name="Pick by comparison" sid="212454887393886" type="System">
@@ -269,11 +347,11 @@
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block disabled="1" sid="918546356772373">
+                                        <event-block sid="918546356772373">
                                             <conditions>
                                                 <condition id="-1" name="Compare X" sid="375061499393448" type="Trigger">
                                                     <param id="0" name="Comparison">3</param>
-                                                    <param id="1" name="X co-ordinate">Player.X+10</param>
+                                                    <param id="1" name="X co-ordinate">Player.X-20</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -302,7 +380,10 @@
                                     </conditions>
                                     <actions>
                                         <action id="-24" name="Move to top" sid="736186848245799" type="Fire" />
-                                        <action id="-24" name="Move to top" sid="218970872882121" type="Smoke" />
+                                        <action id="-26" name="Move to layer" sid="218970872882121" type="Smoke">
+                                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                                        </action>
+                                        <action id="-24" name="Move to top" sid="605168967279309" type="Smoke" />
                                     </actions>
                                 </event-block>
                                 <event-block sid="638394864538924">
@@ -392,10 +473,228 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <include>ESLvlGameModeAfter</include>
-        <event-block sid="260543432072423">
-            <conditions />
+        <event-group description="" sid="934056150214136" title="Functions">
+            <sub-events>
+                <event-block sid="592839424011352">
+                    <conditions>
+                        <condition id="0" name="On function" sid="546275196174166" type="Function">
+                            <param id="0" name="Name">&quot;CS1_Fall1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="410439586837980">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="814113188011170" type="GrasseStepFall">
+                                    <param id="0" name="Unique ID">200</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="311841760418057" type="GrasseStepFall">
+                                    <param id="0" name="Angle">11</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="876190325477809" type="GrasseStepFall">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="497224592123529">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="640167660545724" type="GrasseStepFall">
+                                    <param id="0" name="Unique ID">372</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="420448055803397" type="GrasseStepFall">
+                                    <param id="0" name="Angle">347</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="890065885462723" type="GrasseStepFall">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="253168216546654">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="140898658169233" type="GrasseStepFall">
+                                    <param id="0" name="Unique ID">373</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="708600323012219" type="GrasseStepFall">
+                                    <param id="0" name="Y">253</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="951135540634351">
+                    <conditions>
+                        <condition id="0" name="On function" sid="436475024998556" type="Function">
+                            <param id="0" name="Name">&quot;CS1_Fall2&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="840045019544707">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="236112382613014" type="GrasseStepFall">
+                                    <param id="0" name="Unique ID">373</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="556656114101335" type="GrasseStepFall">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action disabled="1" id="0" name="Call function" sid="511972849784717" type="Function">
+                                    <param id="0" name="Name">&quot;ResetPlayerMovement&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action behavior="Platform" id="11" name="Set enabled" sid="222847778574430" type="Player">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="307731595845681" type="Player">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="127268347355519">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="382858240028565" type="System">
+                                    <param id="0" name="Object">FGarbage</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="366647924271789" type="FGarbage">
+                                    <param id="0" name="Instance variable">TriggerName</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;CS1_Fall2&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="477632755978436" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action behavior="Physics2" id="27" name="Set enabled" sid="680839220449151" type="FGarbage">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Physics2" id="21" name="Set immovable" sid="783504217065842" type="FGarbage">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="917767190161645">
+                    <conditions>
+                        <condition id="0" name="On function" sid="182453083499499" type="Function">
+                            <param id="0" name="Name">&quot;CS1_SowCamp1&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="1" name="Unpin" sid="436780758875639" type="PlayerCameraHead" />
+                        <action id="-10" name="Set value" sid="158636110407693" type="PlayerCameraHead">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Value">&quot;ShowCamp1&quot;</param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="880978842929097" type="System">
+                            <param id="0" name="Tag">&quot;CS1_ShowCamp_Continue1&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="547241868667715" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="949891188516678" type="PlayerCameraHead">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Value">&quot;ShowCamp2&quot;</param>
+                        </action>
+                        <action id="-41" name="Wait for signal" sid="267113765213305" type="System">
+                            <param id="0" name="Tag">&quot;CS1_ShowCamp_Continue2&quot;</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="635493659682878" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="965453808470150" type="System">
+                            <param id="0" name="Tag">&quot;CS1_Fall1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="135428073035912">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="475653390669103" type="PlayerCameraHead">
+                    <param id="0" name="Instance variable">TriggerName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;ShowCamp1&quot;</param>
+                </condition>
+            </conditions>
             <actions />
+            <sub-events>
+                <event-block sid="210050808633382">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="446130703455929" type="PlayerCameraHead">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">2220</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="634283422326758" type="PlayerCameraHead">
+                            <param id="0" name="Distance">dt*30</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="723841499131956">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="160059501883539" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="550086696740929" type="PlayerCameraHead">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="247204840901882" type="System">
+                            <param id="0" name="Tag">&quot;CS1_ShowCamp_Continue1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
+        <event-block sid="976009556183913">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="955271513594360" type="PlayerCameraHead">
+                    <param id="0" name="Instance variable">TriggerName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;ShowCamp2&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="183062538133556">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="174193975218868" type="PlayerCameraHead">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">Player.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="259908993954539" type="PlayerCameraHead">
+                            <param id="0" name="Distance">-dt*60</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="982844757301154">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="273741357962208" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="573063838747581" type="PlayerCameraHead">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-42" name="Signal" sid="383776386367563" type="System">
+                            <param id="0" name="Tag">&quot;CS1_ShowCamp_Continue2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <include>ESLvlGameModeAfter</include>
     </events>
 </c2eventsheet>

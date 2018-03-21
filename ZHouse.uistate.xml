@@ -10,17 +10,17 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Lvl1_house</layout>
+        <layout order="0">Lvl1_house</layout>
         <layout order="1">Lvl2_pole</layout>
-        <layout order="9">Lvl3_bunker</layout>
-        <event-sheet order="2">ESLvl1</event-sheet>
-        <event-sheet order="3">ESLvl2</event-sheet>
-        <event-sheet order="4">EnemyZ1</event-sheet>
-        <event-sheet order="5">EPlayerController</event-sheet>
-        <event-sheet order="6">ESLvlGameMode</event-sheet>
-        <event-sheet order="7">ESLvlTest</event-sheet>
-        <event-sheet order="8">Weapon</event-sheet>
-        <event-sheet order="10">ESLvl3</event-sheet>
+        <layout order="2">Lvl3_bunker</layout>
+        <event-sheet order="3">ESLvl1</event-sheet>
+        <event-sheet order="4">ESLvl2</event-sheet>
+        <event-sheet order="6">EnemyZ1</event-sheet>
+        <event-sheet active="1" order="7">EPlayerController</event-sheet>
+        <event-sheet order="8">ESLvlGameMode</event-sheet>
+        <event-sheet order="9">ESLvlTest</event-sheet>
+        <event-sheet order="10">Weapon</event-sheet>
+        <event-sheet order="5">ESLvl3</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -35,6 +35,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="FSolidTiled" />
         <family expanded="1" name="FSolidSprite" />
         <family expanded="0" name="FEnemies" />
+        <family expanded="1" name="FGarbage" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
@@ -71,6 +72,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/CleftBottom/" />
         <folder expanded="1" path="animation-folder/TreeLeaf/" />
         <folder expanded="1" path="animation-folder/TreeTimber/" />
+        <folder expanded="1" path="animation-folder/DirtSmall/" />
         <folder expanded="1" path="animation-folder/Art1/" />
         <folder expanded="1" path="animation-folder/Art2/" />
         <folder expanded="1" path="animation-folder/Art3/" />
@@ -117,7 +119,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/EnemyPatrolPoint/" />
         <folder expanded="1" path="animation-folder/Tent/" />
         <folder expanded="1" path="animation-folder/Smoke/" />
-        <folder expanded="1" path="animation-folder/DirtSmall/" />
         <folder expanded="1" path="animation-folder/Tube/" />
         <folder expanded="1" path="animation-folder/Wiring/" />
         <folder expanded="1" path="animation-folder/Detal1/" />
@@ -125,5 +126,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/BarrelPart2/" />
         <folder expanded="1" path="animation-folder/Fire/" />
         <folder expanded="1" path="animation-folder/SpawnerEnemyZ1/" />
+        <folder expanded="1" path="animation-folder/EnemyZ1Fake/" />
     </folders-expanded>
 </c2uistate>
