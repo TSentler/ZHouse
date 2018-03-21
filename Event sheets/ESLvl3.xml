@@ -4,6 +4,82 @@
     <name>ESLvl3</name>
     <events>
         <include>ESLvlGameMode</include>
+        <event-block sid="371617607867345">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="750565509691909" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="167030453731456" type="System">
+                    <param id="0" name="Variable">IsBlockKey</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="930126026883794" type="System">
+                    <param id="0" name="Variable">FadeOnOff</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+                <action id="-18" name="Set layer opacity" sid="836938350542735" type="System">
+                    <param id="0" name="Layer">&quot;Fade&quot;</param>
+                    <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="0" name="Call function" sid="414775517234016" type="Function">
+                    <param id="0" name="Name">&quot;StopPlayerMovement&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action behavior="Physics" id="6" name="Apply torque" sid="663000842125631" type="ShotGun">
+                    <param id="0" name="Torque">10</param>
+                </action>
+                <action behavior="Physics2" id="6" name="Apply torque" sid="502454669643793" type="FGarbage">
+                    <param id="0" name="Torque">choose(-1,1)*random(1,2)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="317277955038606">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="368599471930692" type="Player">
+                    <param id="0" name="Object">Trigger</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="189134637706637" type="Trigger">
+                    <param id="0" name="Instance variable">enable</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="743457906190175">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="279326444900671" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;BeginLvl3&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="478100797075339" type="Player">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="537308754591522" type="Player">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action behavior="Platform" id="11" name="Set enabled" sid="628577482627482" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="971481963754996" type="Function">
+                            <param id="0" name="Name">&quot;ResetPlayerMovement&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <include>ESLvlGameModeAfter</include>
+        <event-block sid="637725945834683">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="771345943791147" type="ShotGun">
+                    <param id="0" name="Object">EnemyZ1Fake</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="413836841085052" type="ShotGun" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

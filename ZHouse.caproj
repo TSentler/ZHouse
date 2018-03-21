@@ -942,6 +942,11 @@
             </object-type>
             <object-type name="ShotGun" sid="592384553447927">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Physics" sid="972672553764462">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="862512761351351" speed="5">
                         <frame duration="1" hotspotX="0.25" hotspotY="0.5">

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ESLvlGameMode</name>
     <events>
+        <variable constant="0" name="GTriggerName" sid="334274207755425" static="0" type="text"></variable>
         <variable constant="0" name="PBoomIndex" sid="881525087978116" static="0" type="number">0</variable>
         <variable comment="+1 = fade on; -1 = fade off" constant="0" name="FadeOnOff" sid="896231041638145" static="0" type="number">0</variable>
         <variable constant="1" name="CRAWLOFFSETY" sid="217327520000338" static="0" type="number">0</variable>
