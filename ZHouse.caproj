@@ -1357,8 +1357,8 @@
     <layout-folder>
         <layout>Lvl1_house.xml</layout>
         <layout>Lvl2_pole.xml</layout>
-        <layout>Test.xml</layout>
         <layout>Lvl3_bunker.xml</layout>
+        <layout>Test.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>ESLvl1.xml</event-sheet>
