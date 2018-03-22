@@ -12,12 +12,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="1">Lvl2_pole</layout>
         <layout active="1" order="7">Lvl3_bunker</layout>
-        <event-sheet order="2">ESLvl2</event-sheet>
         <event-sheet order="0">ESLvl3</event-sheet>
+        <event-sheet order="2">ESLvl2</event-sheet>
         <event-sheet order="3">EPlayerController</event-sheet>
+        <event-sheet order="4">Weapon</event-sheet>
         <event-sheet order="5">ESLvlGameMode</event-sheet>
         <event-sheet order="6">ESLvlTest</event-sheet>
-        <event-sheet order="4">Weapon</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -25,7 +25,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="1">
+    <families-expanded root="0">
         <family expanded="0" name="FPawn" />
         <family expanded="0" name="FParticleStopInit" />
         <family expanded="0" name="FTriggerFallFloor" />
@@ -37,14 +37,16 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/House/" />
-        <folder expanded="1" path="object-folder/Nature/" />
+        <folder expanded="0" path="object-folder/Nature/" />
         <folder expanded="0" path="object-folder/Furniture/" />
         <folder expanded="0" path="object-folder/Help/" />
         <folder expanded="0" path="object-folder/Joy/" />
         <folder expanded="0" path="object-folder/Particle/" />
-        <folder expanded="1" path="object-folder/Camping/" />
+        <folder expanded="0" path="object-folder/Camping/" />
         <folder expanded="0" path="object-folder/System/" />
-        <folder expanded="1" path="object-folder/Player/" />
+        <folder expanded="0" path="object-folder/Player/" />
+        <folder expanded="0" path="object-folder/Bunker/" />
+        <folder expanded="0" path="object-folder/Enemies/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -100,29 +102,36 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/BottleLittle/" />
         <folder expanded="1" path="animation-folder/Chuck/" />
         <folder expanded="1" path="animation-folder/Bag/" />
+        <folder expanded="1" path="animation-folder/Tent/" />
         <folder expanded="1" path="animation-folder/Player/" />
         <folder expanded="1" path="animation-folder/ShotGun/" />
         <folder expanded="1" path="animation-folder/PlayerCameraHead/" />
         <folder expanded="1" path="animation-folder/Bullet/" />
-        <folder expanded="1" path="animation-folder/Trigger/" />
-        <folder expanded="1" path="animation-folder/EnemyOutWindow/" />
-        <folder expanded="1" path="animation-folder/EnemyZ1/" />
-        <folder expanded="1" path="animation-folder/SolidInvisible/" />
+        <folder expanded="1" path="animation-folder/Minigun/" />
+        <folder expanded="1" path="animation-folder/BulletMinigun/" />
         <folder expanded="1" path="animation-folder/Barrel/" />
-        <folder expanded="1" path="animation-folder/CarBig/" />
         <folder expanded="1" path="animation-folder/BarrelNoSolid/" />
-        <folder expanded="1" path="animation-folder/PlaformInvisible/" />
-        <folder expanded="1" path="animation-folder/kepotcka/" />
-        <folder expanded="1" path="animation-folder/EnemyPatrolPoint/" />
-        <folder expanded="1" path="animation-folder/Tent/" />
-        <folder expanded="1" path="animation-folder/Smoke/" />
-        <folder expanded="1" path="animation-folder/Tube/" />
-        <folder expanded="1" path="animation-folder/Wiring/" />
-        <folder expanded="1" path="animation-folder/Detal1/" />
         <folder expanded="1" path="animation-folder/BarrelPart1/" />
         <folder expanded="1" path="animation-folder/BarrelPart2/" />
-        <folder expanded="1" path="animation-folder/Fire/" />
-        <folder expanded="1" path="animation-folder/SpawnerEnemyZ1/" />
+        <folder expanded="1" path="animation-folder/Decor/" />
+        <folder expanded="1" path="animation-folder/Decor2/" />
+        <folder expanded="1" path="animation-folder/Decor3/" />
+        <folder expanded="1" path="animation-folder/Detal1/" />
+        <folder expanded="1" path="animation-folder/TubeBig/" />
+        <folder expanded="1" path="animation-folder/Tube/" />
+        <folder expanded="1" path="animation-folder/Wiring/" />
+        <folder expanded="1" path="animation-folder/Dokor/" />
+        <folder expanded="1" path="animation-folder/EnemyZ1/" />
+        <folder expanded="1" path="animation-folder/EnemyOutWindow/" />
         <folder expanded="1" path="animation-folder/EnemyZ1Fake/" />
+        <folder expanded="1" path="animation-folder/EnemyPatrolPoint/" />
+        <folder expanded="1" path="animation-folder/SpawnerEnemyZ1/" />
+        <folder expanded="1" path="animation-folder/Trigger/" />
+        <folder expanded="1" path="animation-folder/SolidInvisible/" />
+        <folder expanded="1" path="animation-folder/CarBig/" />
+        <folder expanded="1" path="animation-folder/PlaformInvisible/" />
+        <folder expanded="1" path="animation-folder/kepotcka/" />
+        <folder expanded="1" path="animation-folder/Smoke/" />
+        <folder expanded="1" path="animation-folder/Fire/" />
     </folders-expanded>
 </c2uistate>
