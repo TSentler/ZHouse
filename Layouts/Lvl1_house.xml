@@ -2407,6 +2407,7 @@
                         <IsFell>false</IsFell>
                         <Weapon>0</Weapon>
                         <IsHide>false</IsHide>
+                        <WeaponInHand></WeaponInHand>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -2877,15 +2878,21 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="ShotGun" uid="60">
+                <instance type="Shotgun" uid="60">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <Name>Shotgun</Name>
+                        <BulletType>Big</BulletType>
+                        <InHand>false</InHand>
+                        <isCanTake>true</isCanTake>
+                    </instance-variables>
                     <behavior-instances>
-                        <behavior-instance type="Physics">
+                        <behavior-instance type="Physics2">
                             <properties>
                                 <immovable>No</immovable>
                                 <collision-mask>Use collision polygon</collision-mask>
@@ -2915,7 +2922,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Bullet" uid="140">
+                <instance type="BulletBig" uid="140">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -2947,32 +2954,6 @@
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Trigger" uid="141">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <enable>true</enable>
-                        <Name>GetShotGun</Name>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>768</x>
-                        <y>664</y>
-                        <z>0</z>
-                        <width>16</width>
-                        <height>24</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>0.200000003</opacity>
                     </world>
                 </instance>
                 <instance type="Trigger" uid="142">

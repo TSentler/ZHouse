@@ -926,6 +926,7 @@
                     <instance-variable name="IsFell" sid="968044037679725" type="boolean" />
                     <instance-variable name="Weapon" sid="524720278300825" type="number" />
                     <instance-variable name="IsHide" sid="971813433830567" type="boolean" />
+                    <instance-variable name="WeaponInHand" sid="411672114905635" type="string" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Platform" sid="110732531719883">
@@ -958,13 +959,8 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="ShotGun" sid="592384553447927">
+            <object-type name="Shotgun" sid="592384553447927">
                 <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Physics" sid="972672553764462">
-                        <behavior id="Physics" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="862512761351351" speed="5">
                         <frame duration="1" hotspotX="0.25" hotspotY="0.5">
@@ -998,7 +994,7 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="Bullet" sid="169888001861834">
+            <object-type name="BulletBig" sid="169888001861834">
                 <plugin id="Sprite" />
                 <behaviors>
                     <behavior-type name="Bullet" sid="480316823631597">
@@ -1015,15 +1011,29 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="929737342803951" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.125" hotspotY="0.5">
+                            <image-point name="SpawnBullet" x="1" y="0.25" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="BulletMinigun" sid="115375905074825">
+            <object-type name="BulletSmall" sid="115375905074825">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="513987209644517">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="221241390056968" speed="5">
-                        <frame duration="1" hotspotX="1" hotspotY="1" />
+                        <frame duration="1" hotspotX="0.428571" hotspotY="0.666667">
+                            <collision-poly>
+                                <point x="0.428571" y="0.333333" />
+                                <point x="0.571429" y="0.333333" />
+                                <point x="0.571429" y="0.666667" />
+                                <point x="0.428571" y="0.666667" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1518,6 +1528,29 @@
                     <behavior id="Physics" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="FGuns" plugin-id="Sprite" sid="841423667731547">
+            <members>
+                <member>Minigun</member>
+                <member>Shotgun</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Name" sid="548158413888911" type="string" />
+                <instance-variable name="BulletType" sid="314805532221475" type="string" />
+                <instance-variable name="InHand" sid="207990969985191" type="boolean" />
+                <instance-variable name="isCanTake" sid="560668723163317" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics2" sid="386910490273154">
+                    <behavior id="Physics" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="FBullets" plugin-id="Sprite" sid="342257681300748">
+            <members>
+                <member>BulletBig</member>
+                <member>BulletSmall</member>
+            </members>
         </family>
     </families>
     <layout-folder>

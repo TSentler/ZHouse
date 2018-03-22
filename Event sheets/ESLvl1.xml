@@ -319,7 +319,7 @@
                             <param id="0" name="Instance variable">enable</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="-8" name="Set angle" sid="369719679525873" type="ShotGun">
+                        <action id="-8" name="Set angle" sid="369719679525873" type="Shotgun">
                             <param id="0" name="Angle">0</param>
                         </action>
                         <action id="-10" name="Set value" sid="898343030390580" type="Player">

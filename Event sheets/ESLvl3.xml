@@ -25,13 +25,26 @@
                     <param id="0" name="Name">&quot;StopPlayerMovement&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action behavior="Physics" id="6" name="Apply torque" sid="663000842125631" type="ShotGun">
-                    <param id="0" name="Torque">10</param>
-                </action>
                 <action behavior="Physics2" id="6" name="Apply torque" sid="502454669643793" type="FGarbage">
                     <param id="0" name="Torque">choose(-1,1)*random(1,2)</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="544449572269229">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="180972613227381" type="FGuns">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ShotgunLost&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Rotate clockwise" sid="663000842125631" type="FGuns">
+                            <param id="0" name="Degrees">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="317277955038606">
             <conditions>
@@ -66,20 +79,21 @@
                             <param id="0" name="Name">&quot;ResetPlayerMovement&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
+                        <action id="-9" name="Destroy" sid="957173151395251" type="Shotgun" />
                     </actions>
                 </event-block>
             </sub-events>
         </event-block>
-        <include>ESLvlGameModeAfter</include>
         <event-block sid="637725945834683">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="771345943791147" type="ShotGun">
+                <condition id="0" name="On collision with another object" sid="771345943791147" type="Shotgun">
                     <param id="0" name="Object">EnemyZ1Fake</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="413836841085052" type="ShotGun" />
+                <action id="-9" name="Destroy" sid="413836841085052" type="Shotgun" />
             </actions>
         </event-block>
+        <include>ESLvlGameModeAfter</include>
     </events>
 </c2eventsheet>

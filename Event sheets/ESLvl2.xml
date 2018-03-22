@@ -146,7 +146,7 @@
                 <event-block any="1" sid="292274863996003">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="745815800194434" type="Barrel">
-                            <param id="0" name="Object">Bullet</param>
+                            <param id="0" name="Object">FBullets</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -154,6 +154,7 @@
                             <param id="0" name="Variable">BarrelName</param>
                             <param id="1" name="Value">Barrel.TriggerName</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="197317093795191" type="FBullets" />
                     </actions>
                     <sub-events>
                         <event-block sid="460869982688206">

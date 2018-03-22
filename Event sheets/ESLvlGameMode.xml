@@ -97,7 +97,7 @@
                             <param id="0" name="Object">FPawn</param>
                         </condition>
                         <condition id="0" name="On collision with another object" sid="188604973215431" type="Window">
-                            <param id="0" name="Object">Bullet</param>
+                            <param id="0" name="Object">FBullets</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -162,7 +162,7 @@
                 <event-block any="1" sid="782903288623387">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="162823396293073" type="WindowBoardedUp">
-                            <param id="0" name="Object">Bullet</param>
+                            <param id="0" name="Object">FBullets</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -255,36 +255,45 @@
                 <event-block sid="190894930935707">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="905485663057875" type="Player">
+                            <param id="0" name="Object">FGuns</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="173361317504011" type="FGuns">
+                            <param id="0" name="Instance variable">InHand</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="526924564154796" type="FGuns">
+                            <param id="0" name="Instance variable">isCanTake</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="499854210730146" type="FGuns">
+                            <param id="0" name="Instance variable">InHand</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Physics2" id="27" name="Set enabled" sid="957107181264816" type="FGuns">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="476241550587881">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="965240621353377" type="Player">
                             <param id="0" name="Object">Trigger</param>
                         </condition>
-                        <condition id="-8" name="Is boolean instance variable set" sid="526924564154796" type="Trigger">
+                        <condition id="-8" name="Is boolean instance variable set" sid="200640328499398" type="Trigger">
                             <param id="0" name="Instance variable">enable</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="616665760475881">
+                        <event-block sid="748889237668141">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="501127865807973" type="Trigger">
+                                <condition id="-7" name="Compare instance variable" sid="169764066966569" type="Trigger">
                                     <param id="0" name="Instance variable">Name</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;PlayerHide&quot;</param>
+                                    <param id="2" name="Value">&quot;new&quot;</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-13" name="Set boolean" sid="573459221559766" type="EnemyZ1">
-                                    <param id="0" name="Instance variable">IsAngry</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="442033842829666" type="EnemyZ1">
-                                    <param id="0" name="Instance variable">MoveDir</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="-13" name="Set boolean" sid="758756271576898" type="Player">
-                                    <param id="0" name="Instance variable">IsHide</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
+                            <actions />
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -323,6 +332,29 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="555810864561833">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="446776173328039" type="Trigger">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;PlayerHide&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="892935211308014" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">IsAngry</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="962028816119106" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">MoveDir</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="979818173172791" type="Player">
+                                    <param id="0" name="Instance variable">IsHide</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="307302035467301">
                             <conditions>
                                 <condition id="-7" name="Compare instance variable" sid="173602218725719" type="Trigger">
@@ -379,28 +411,6 @@
                                 </action>
                                 <action id="-8" name="Set angle" sid="919069350871881" type="Player">
                                     <param id="0" name="Angle">45</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="109139700365167">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="905212238657703" type="Trigger">
-                                    <param id="0" name="Instance variable">Name</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;GetShotGun&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-13" name="Set boolean" sid="606024776191917" type="Trigger">
-                                    <param id="0" name="Instance variable">enable</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="-8" name="Set angle" sid="911338558498725" type="ShotGun">
-                                    <param id="0" name="Angle">0</param>
-                                </action>
-                                <action id="-10" name="Set value" sid="688076375619033" type="Player">
-                                    <param id="0" name="Instance variable">Weapon</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>

@@ -91,11 +91,5 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="604502680040876">
-            <conditions>
-                <condition id="11" name="Collisions enabled" sid="352196787025298" type="JoyArrowUpLeft" />
-            </conditions>
-            <actions />
-        </event-block>
     </events>
 </c2eventsheet>
