@@ -1182,6 +1182,11 @@
             </object-type>
             <object-type name="Dokor" sid="113126174645693">
                 <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Platform" sid="808872386678340">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="687081378307516" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -1489,6 +1494,12 @@
         </family>
         <family name="FSolidTiled" plugin-id="TiledBg" sid="162754945402926">
             <members>
+                <member>BunkerWall</member>
+                <member>BunkerWallFake</member>
+                <member>Dirt</member>
+                <member>floor_lvl3</member>
+                <member>Grasse</member>
+                <member>GrasseStepFall</member>
                 <member>HouseFloor</member>
                 <member>HouseFloorFake</member>
                 <member>HouseFloorPhysics</member>

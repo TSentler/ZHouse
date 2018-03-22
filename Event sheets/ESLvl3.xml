@@ -82,6 +82,25 @@
                         <action id="-9" name="Destroy" sid="957173151395251" type="Shotgun" />
                     </actions>
                 </event-block>
+                <event-block sid="374021275561306">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="663512619717579" type="Trigger">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;CutSceneDoctor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="268487959622874" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="497823271487228" type="Function">
+                            <param id="0" name="Name">&quot;StopPlayerMovement&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
         <event-block sid="637725945834683">
