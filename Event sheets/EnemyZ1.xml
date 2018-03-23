@@ -4,6 +4,7 @@
     <name>EnemyZ1</name>
     <events>
         <variable constant="0" name="SpawnedEnemyZ1" sid="759082547816452" static="0" type="number">0</variable>
+        <variable constant="0" name="SpawnedEnemyZ1Fake" sid="962472960155639" static="0" type="number">0</variable>
         <event-group description="" sid="505474399627507" title="Enemy">
             <sub-events>
                 <event-block sid="111632726551090">
@@ -387,22 +388,22 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="565279918101801">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="867130081303319" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="760368327329480" type="System">
+                                    <param id="0" name="Variable">SpawnedEnemyZ1</param>
+                                    <param id="1" name="Value">EnemyZ1.Count</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="565279918101801">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="867130081303319" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Set value" sid="760368327329480" type="System">
-                    <param id="0" name="Variable">SpawnedEnemyZ1</param>
-                    <param id="1" name="Value">EnemyZ1.Count</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>

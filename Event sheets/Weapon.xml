@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Weapon</name>
     <events>
+        <variable constant="0" name="EnemyZ1FakeIndex" sid="437267528727096" static="0" type="number">0</variable>
+        <variable constant="1" name="ENEMY_Z1_FAKE_MAX_INDEX" sid="669221818025644" static="0" type="number">50</variable>
         <event-block sid="370210902115653">
             <conditions>
                 <condition id="-1" name="Every tick" sid="418650934857321" type="System" />
@@ -38,10 +40,13 @@
                 <action id="-9" name="Destroy" sid="871590302204960" type="FBullets" />
             </actions>
         </event-block>
-        <event-block sid="305595909653171">
+        <event-block any="1" sid="305595909653171">
             <conditions>
                 <condition id="0" name="On collision with another object" sid="864501889747548" type="FBullets">
                     <param id="0" name="Object">FSolidSprite</param>
+                </condition>
+                <condition id="0" name="On collision with another object" sid="891273464083141" type="FBullets">
+                    <param id="0" name="Object">FSolidTiled</param>
                 </condition>
             </conditions>
             <actions>
@@ -103,6 +108,241 @@
                 </action>
                 <action behavior="Bullet" id="0" name="Set speed" sid="694065412833384" type="BulletBig">
                     <param id="0" name="Speed">700 * Player.Forward</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="302208740506166">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="252598247122251" type="EnemyZ1" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="652896007529422">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="781729095261190" type="System">
+                            <param id="0" name="Variable">SpawnedEnemyZ1Fake</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">ENEMY_Z1_FAKE_MAX_INDEX</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="183926339289837" type="System">
+                            <param id="0" name="Object to create">EnemyZ1Fake</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">EnemyZ1.ImagePointX(0)</param>
+                            <param id="3" name="Y">EnemyZ1.ImagePointY(0)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="466298990302878" type="EnemyZ1Fake">
+                            <param id="0" name="Instance variable">Index</param>
+                            <param id="1" name="Value">EnemyZ1FakeIndex</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="649784699129648" type="System">
+                            <param id="0" name="Variable">SpawnedEnemyZ1Fake</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="498755846953239" type="EnemyZ1Fake">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="823394660847437" type="EnemyZ1Fake">
+                            <param id="0" name="Object">EnemyZ1</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="717273305208357" type="EnemyZ1Fake">
+                            <param id="0" name="Angle">EnemyZ1.Angle</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="680257001892786" type="EnemyZ1Fake">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="800053413635105" type="EnemyZ1Fake">
+                            <param id="0" name="Setting">0</param>
+                        </action>
+                        <action behavior="Physics" id="3" name="Apply impulse" sid="859395118035605" type="EnemyZ1Fake">
+                            <param id="0" name="Impulse X">Player.Forward*0.1</param>
+                            <param id="1" name="Implulse Y">0</param>
+                            <param id="2" name="Image point">&quot;Head&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="195493272157876">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="269691484236698" type="EnemyZ1" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="776439601155487" type="EnemyZ1Fake">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="954638879762127">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="621059688136005" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Set mirrored" sid="279523232537819" type="EnemyZ1Fake">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="404661185674497">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="188147256792409" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="156725235880674">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="948958992007639" type="System">
+                                    <param id="0" name="Object">EnemyZ1Fake</param>
+                                    <param id="1" name="Expression">EnemyZ1Fake.Index</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">EnemyZ1FakeIndex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="291429115663739" type="EnemyZ1Fake">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="783574238172633" type="EnemyZ1Fake">
+                                    <param id="0" name="Object">EnemyZ1</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="637730775307299" type="EnemyZ1Fake">
+                                    <param id="0" name="Angle">EnemyZ1.Angle</param>
+                                </action>
+                                <action behavior="Physics" id="15" name="Set velocity" sid="474219381070965" type="EnemyZ1Fake">
+                                    <param id="0" name="X component">0</param>
+                                    <param id="1" name="Y component">0</param>
+                                </action>
+                                <action behavior="Physics" id="9" name="Set angular velocity" sid="173085851466063" type="EnemyZ1Fake">
+                                    <param id="0" name="Angular velocity">0</param>
+                                </action>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="757037761581832" type="EnemyZ1Fake">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Physics" id="21" name="Set immovable" sid="627463199031654" type="EnemyZ1Fake">
+                                    <param id="0" name="Setting">0</param>
+                                </action>
+                                <action behavior="Physics" id="3" name="Apply impulse" sid="649573088998685" type="EnemyZ1Fake">
+                                    <param id="0" name="Impulse X">Player.Forward*0.1</param>
+                                    <param id="1" name="Implulse Y">0</param>
+                                    <param id="2" name="Image point">&quot;Head&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="161116148517395">
+                                    <conditions>
+                                        <condition id="7" name="Is mirrored" sid="809910957848395" type="EnemyZ1" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="963432106812812" type="EnemyZ1Fake">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="416194581779598">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="379911319956758" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="371925903999455" type="EnemyZ1Fake">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="184520100093827">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Add to" sid="466231645685547" type="System">
+                            <param id="0" name="Variable">EnemyZ1FakeIndex</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="695169526735215">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="493619821199112" type="System">
+                            <param id="0" name="Variable">EnemyZ1FakeIndex</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">ENEMY_Z1_FAKE_MAX_INDEX</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="134337770786434" type="System">
+                            <param id="0" name="Variable">EnemyZ1FakeIndex</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="227197286550316">
+                    <conditions>
+                        <condition id="-10" name="For" sid="659586930804111" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">int(random(2,5))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="208191985807000" type="System">
+                            <param id="0" name="Object to create">BloodSplash</param>
+                            <param id="1" name="Layer">&quot;Game&quot;</param>
+                            <param id="2" name="X">EnemyZ1.ImagePointX(&quot;Center&quot;)+random(-12,12)</param>
+                            <param id="3" name="Y">EnemyZ1.ImagePointY(&quot;Center&quot;)+random(-12,12)</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="831701910480451" type="BloodSplash">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="424130662421607" type="BloodSplash">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="587644557442138" type="BloodSplash">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="687454100539966">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="121115469143973" type="EnemyZ1Fake" />
+                <condition id="-7" name="Compare instance variable" sid="859242974687384" type="EnemyZ1Fake">
+                    <param id="0" name="Instance variable">Index</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="745105467645677" type="System">
+                    <param id="0" name="Variable">SpawnedEnemyZ1Fake</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="743309148063590">
+            <conditions>
+                <condition behavior="Physics" id="2" name="Compare angular velocity" sid="776761691135581" type="EnemyZ1Fake">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="Value">0.01</param>
+                </condition>
+                <condition behavior="Physics" id="1" name="Compare velocity" sid="703671323476101" type="EnemyZ1Fake">
+                    <param id="0" name="Which">2</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0.01</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="410325292289015" type="EnemyZ1Fake">
+                    <param id="0" name="Instance variable">Index</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="27" name="Set enabled" sid="727829452572323" type="EnemyZ1Fake">
+                    <param id="0" name="Mode">0</param>
                 </action>
             </actions>
         </event-block>

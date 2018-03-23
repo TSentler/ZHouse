@@ -11,17 +11,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Lvl3_bunker</layout>
-        <layout order="2">Lvl2_pole</layout>
-        <layout order="11">Test</layout>
-        <event-sheet active="1" order="1">ESLvl3</event-sheet>
-        <event-sheet order="3">ESLvl2</event-sheet>
+        <layout order="2">Lvl1_house</layout>
+        <layout order="3">Lvl2_pole</layout>
+        <layout order="12">Test</layout>
+        <event-sheet order="1">ESLvl3</event-sheet>
         <event-sheet order="4">EPlayerController</event-sheet>
         <event-sheet order="5">Weapon</event-sheet>
-        <event-sheet order="6">ESLvlGameMode</event-sheet>
-        <event-sheet order="7">ESLvlTest</event-sheet>
-        <event-sheet order="8">EnemyZ1</event-sheet>
-        <event-sheet order="9">ESLvlGameModeAfter</event-sheet>
-        <event-sheet order="10">ESLvl1</event-sheet>
+        <event-sheet active="1" order="6">ESLvlGameMode</event-sheet>
+        <event-sheet order="7">ESLvl2</event-sheet>
+        <event-sheet order="8">ESLvlTest</event-sheet>
+        <event-sheet order="9">EnemyZ1</event-sheet>
+        <event-sheet order="10">ESLvlGameModeAfter</event-sheet>
+        <event-sheet order="11">ESLvl1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -34,7 +35,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="FParticleStopInit" />
         <family expanded="0" name="FTriggerFallFloor" />
         <family expanded="0" name="FSolidTiled" />
-        <family expanded="0" name="FSolidSprite" />
+        <family expanded="1" name="FSolidSprite" />
         <family expanded="0" name="FEnemies" />
         <family expanded="1" name="FGarbage" />
         <family expanded="1" name="FGuns" />
@@ -52,7 +53,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/System/" />
         <folder expanded="1" path="object-folder/Player/" />
         <folder expanded="0" path="object-folder/Bunker/" />
-        <folder expanded="0" path="object-folder/Enemies/" />
+        <folder expanded="1" path="object-folder/Enemies/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -115,6 +116,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/BulletBig/" />
         <folder expanded="1" path="animation-folder/Minigun/" />
         <folder expanded="1" path="animation-folder/BulletSmall/" />
+        <folder expanded="1" path="animation-folder/BulletHoles/" />
         <folder expanded="1" path="animation-folder/Barrel/" />
         <folder expanded="1" path="animation-folder/BarrelNoSolid/" />
         <folder expanded="1" path="animation-folder/BarrelPart1/" />
@@ -139,5 +141,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/kepotcka/" />
         <folder expanded="1" path="animation-folder/Smoke/" />
         <folder expanded="1" path="animation-folder/Fire/" />
+        <folder expanded="1" path="animation-folder/BloodSplash/" />
     </folders-expanded>
 </c2uistate>

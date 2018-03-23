@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>ESLvlGameMode</name>
     <events>
+        <variable constant="0" name="BonusMinigun" sid="978504151440805" static="0" type="number">0</variable>
         <variable constant="0" name="GTriggerName" sid="334274207755425" static="0" type="text"></variable>
         <variable constant="0" name="PBoomIndex" sid="881525087978116" static="0" type="number">0</variable>
         <variable comment="+1 = fade on; -1 = fade off" constant="0" name="FadeOnOff" sid="896231041638145" static="0" type="number">0</variable>
@@ -26,6 +27,22 @@
                 <action id="-18" name="Set layer opacity" sid="366606204837175" type="System">
                     <param id="0" name="Layer">&quot;Fade&quot;</param>
                     <param id="1" name="Opacity">100</param>
+                </action>
+                <action id="-9" name="Set value" sid="194692020455897" type="System">
+                    <param id="0" name="Variable">SpawnedEnemyZ1</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="199358416541804" type="System">
+                    <param id="0" name="Variable">SpawnedEnemyZ1Fake</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="293604031936574" type="System">
+                    <param id="0" name="Variable">EnemyZ1FakeIndex</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="764970211801314" type="System">
+                    <param id="0" name="Variable">PBoomIndex</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -84,6 +101,35 @@
                         <action id="-15" name="Set visible" sid="532757895357873" type="HelpJoy">
                             <param id="0" name="Visibility">1</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="750482967125933">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="644901737881575" type="System">
+                            <param id="0" name="Variable">BonusMinigun</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="824987683373664" type="Minigun">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;MinigunBonus&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="982800539693405" type="Shotgun">
+                            <param id="0" name="Instance variable">Name</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;Shotgun&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="697806753849895" type="Minigun">
+                            <param id="0" name="Angle">Shotgun.Angle</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="177909895613230" type="Minigun">
+                            <param id="0" name="Object">Shotgun</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="635595796725342" type="Shotgun" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -427,8 +473,11 @@
                                     <param id="1" name="Value">0</param>
                                 </action>
                                 <action behavior="Pin" id="1" name="Unpin" sid="347926925028945" type="PlayerCameraHead" />
-                                <action id="-9" name="Set value" sid="946233638798903" type="System">
-                                    <param id="0" name="Variable">FadeOnOff</param>
+                                <action behavior="Platform" id="0" name="Set ignoring input" sid="750610413857757" type="Player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="619476910775813" type="System">
+                                    <param id="0" name="Variable">IsBlockKey</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action disabled="1" id="-32" name="Set layer effect parameter" sid="317054347546827" type="System">
@@ -437,16 +486,13 @@
                                     <param id="2" name="Parameter index">0</param>
                                     <param id="3" name="Value">100</param>
                                 </action>
-                                <action behavior="Platform" id="0" name="Set ignoring input" sid="750610413857757" type="Player">
-                                    <param id="0" name="Input">1</param>
+                                <action id="-9" name="Set value" sid="946233638798903" type="System">
+                                    <param id="0" name="Variable">FadeOnOff</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-12" name="Set group active" sid="141117565926394" type="System">
                                     <param id="0" name="Group name">&quot;FadeOn&quot;</param>
                                     <param id="1" name="State">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="619476910775813" type="System">
-                                    <param id="0" name="Variable">IsBlockKey</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="924530490177061" type="System">
                                     <param id="0" name="Seconds">2</param>
@@ -589,5 +635,17 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="901887003375706" title="FX" />
+        <event-block sid="400093091372404">
+            <conditions>
+                <condition id="4" name="On finished" sid="948306524474224" type="BloodSplash">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="195263215128597" type="BloodSplash" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="185033334992965" type="BloodSplash" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

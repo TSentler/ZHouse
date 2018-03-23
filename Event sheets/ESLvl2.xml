@@ -265,7 +265,11 @@
                             </conditions>
                             <actions>
                                 <action id="-26" name="Move to layer" sid="709403619697623" type="CarBig">
-                                    <param id="0" name="Layer">&quot;Game&quot;</param>
+                                    <param id="0" name="Layer">&quot;Foreground&quot;</param>
+                                </action>
+                                <action id="-25" name="Move to bottom" sid="802454413902416" type="CarBig" />
+                                <action behavior="Physics" id="27" name="Set enabled" sid="324326411887249" type="CarBig">
+                                    <param id="0" name="Mode">1</param>
                                 </action>
                                 <action behavior="Physics" id="21" name="Set immovable" sid="835799954669871" type="CarBig">
                                     <param id="0" name="Setting">0</param>
@@ -422,25 +426,42 @@
                 </event-block>
                 <event-block sid="444532430821148">
                     <conditions>
-                        <condition behavior="Physics" id="1" inverted="1" name="Compare velocity" sid="962248295048070" type="CarBig">
-                            <param id="0" name="Which">0</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition behavior="Physics" id="2" inverted="1" name="Compare angular velocity" sid="198303277165529" type="CarBig">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Value">0</param>
-                        </condition>
-                        <condition id="1" name="Is overlapping another object" sid="246780763563068" type="CarBig">
-                            <param id="0" name="Object">Player</param>
-                        </condition>
+                        <condition behavior="Physics" id="4" name="Is enabled" sid="170283055875846" type="CarBig" />
                     </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="769130246897614" type="Player">
-                            <param id="0" name="Instance variable">IsDeath</param>
-                            <param id="1" name="Value">2</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="601860899425374">
+                            <conditions>
+                                <condition behavior="Physics" id="1" name="Compare velocity" sid="297098857664954" type="CarBig">
+                                    <param id="0" name="Which">2</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0.01</param>
+                                </condition>
+                                <condition behavior="Physics" id="2" name="Compare angular velocity" sid="599003100307445" type="CarBig">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Value">0.01</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="383700244729296" type="CarBig">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="266956351778230">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="246780763563068" type="CarBig">
+                                    <param id="0" name="Object">Player</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="769130246897614" type="Player">
+                                    <param id="0" name="Instance variable">IsDeath</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="752564429023544">
                     <conditions>

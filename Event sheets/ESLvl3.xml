@@ -92,8 +92,10 @@
                         <condition id="-14" name="Pick by unique ID" sid="720699076261009" type="EnemyZ1">
                             <param id="0" name="Unique ID">414</param>
                         </condition>
-                        <condition id="-14" name="Pick by unique ID" sid="290378861560572" type="SolidInvisible">
-                            <param id="0" name="Unique ID">417</param>
+                        <condition id="-7" name="Compare instance variable" sid="290378861560572" type="SolidInvisible">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;CSD_ZEnter&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -116,7 +118,19 @@
                         <action behavior="Solid" id="0" name="Set enabled" sid="666971605439923" type="SolidInvisible">
                             <param id="0" name="State">1</param>
                         </action>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="643016622473649" type="SolidInvisible">
+                            <param id="0" name="Setting">1</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="690700885954984" type="SolidInvisible">
+                            <param id="0" name="Mode">1</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="770086980476086">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -206,5 +220,42 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="139328303308322">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="559110137227626" type="EnemyZ1" />
+                <condition id="-7" name="Compare instance variable" sid="410822296697777" type="EnemyZ1">
+                    <param id="0" name="Instance variable">TriggerName</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;CSD_Z&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="683222073076881" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="596028587994536" type="BulletHoles">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="184262476276018" type="BulletSmall" />
+                <action id="-9" name="Set value" sid="767603699388470" type="System">
+                    <param id="0" name="Variable">FadeOnOff</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-12" name="Set group active" sid="888345131449169" type="System">
+                    <param id="0" name="Group name">&quot;FadeOn&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="592795001652248" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="-9" name="Set value" sid="800084739817625" type="System">
+                    <param id="0" name="Variable">BonusMinigun</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-25" name="Go to layout (by name)" sid="738061658808465" type="System">
+                    <param id="0" name="Layout">&quot;Lvl1_house&quot;</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

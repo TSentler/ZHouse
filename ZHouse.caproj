@@ -10,6 +10,7 @@
     <unique-id>1gdx0q68a53wc</unique-id>
     <saved-with-version>23900</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -914,6 +915,9 @@
             <object-type name="Function" sid="289380395327252">
                 <plugin id="Function" />
             </object-type>
+            <object-type name="Browser" sid="402602733888741">
+                <plugin id="Browser" />
+            </object-type>
         </object-folder>
         <object-folder name="Player">
             <object-type name="Player" sid="545642236739788">
@@ -1032,6 +1036,21 @@
                                 <point x="0.571429" y="0.333333" />
                                 <point x="0.571429" y="0.666667" />
                                 <point x="0.428571" y="0.666667" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="BulletHoles" sid="819971610897096">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="415559884334550" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.25" y="0.25" />
+                                <point x="0.75" y="0.25" />
+                                <point x="0.75" y="0.75" />
+                                <point x="0.25" y="0.75" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1232,6 +1251,7 @@
                         <frame duration="1" hotspotX="0" hotspotY="1">
                             <image-point name="Head" x="0.5" y="-1.25" />
                             <image-point name="CrawlCheck" x="0.5" y="0" />
+                            <image-point name="Center" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="0.789063" />
                                 <point x="1" y="0" />
@@ -1242,6 +1262,7 @@
                         <frame duration="1" hotspotX="0" hotspotY="1">
                             <image-point name="Head" x="0.5" y="-1.25" />
                             <image-point name="CrawlCheck" x="0.5" y="0" />
+                            <image-point name="Center" x="0.5" y="0.5" />
                             <collision-poly>
                                 <point x="0" y="0.804688" />
                                 <point x="1" y="0" />
@@ -1297,26 +1318,24 @@
             </object-type>
             <object-type name="EnemyZ1Fake" sid="128864151359991">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Index" sid="202751505287033" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Physics" sid="966566843151763">
+                        <behavior id="Physics" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="587568788779488" speed="0">
+                    <animation framecount="1" loop="0" name="Idle" pingpong="0" repeatcount="1" repeatto="0" sid="587568788779488" speed="0">
                         <frame duration="1" hotspotX="0" hotspotY="1">
                             <image-point name="Head" x="0.5" y="-1.25" />
                             <image-point name="CrawlCheck" x="0.5" y="0" />
                             <collision-poly>
-                                <point x="0" y="0.789063" />
-                                <point x="1" y="0" />
-                                <point x="1" y="0.964844" />
-                                <point x="0.453125" y="0.962891" />
-                            </collision-poly>
-                        </frame>
-                        <frame duration="1" hotspotX="0" hotspotY="1">
-                            <image-point name="Head" x="0.5" y="-1.25" />
-                            <image-point name="CrawlCheck" x="0.5" y="0" />
-                            <collision-poly>
-                                <point x="0" y="0.804688" />
-                                <point x="1" y="0" />
-                                <point x="1" y="0.960938" />
-                                <point x="0.445313" y="0.964844" />
+                                <point x="0" y="0.523438" />
+                                <point x="0.523438" y="0" />
+                                <point x="1" y="0.515625" />
+                                <point x="0.53125" y="1" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1364,6 +1383,9 @@
         </object-type>
         <object-type name="SolidInvisible" sid="260208290829968">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="TriggerName" sid="687902754503992" type="string" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="319420231525051">
                     <behavior id="solid" />
@@ -1454,6 +1476,17 @@
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="902804958186513" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.526316" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.526316" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BloodSplash" sid="646902160121991">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="476196209214543" speed="16">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -1592,6 +1625,7 @@
             </properties>
         </global-instance>
         <global-instance type="Function" uid="370" />
+        <global-instance type="Browser" uid="448" />
     </global-instances>
     <sounds-folder />
     <music-folder />
