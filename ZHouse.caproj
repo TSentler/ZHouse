@@ -1550,6 +1550,7 @@
                 <instance-variable name="BulletType" sid="314805532221475" type="string" />
                 <instance-variable name="InHand" sid="207990969985191" type="boolean" />
                 <instance-variable name="isCanTake" sid="560668723163317" type="boolean" />
+                <instance-variable name="ShotTrigger" sid="888047406071723" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Physics2" sid="386910490273154">
@@ -1576,7 +1577,6 @@
         <event-sheet>EnemyZOutWindow.xml</event-sheet>
         <event-sheet>EnemyZ1.xml</event-sheet>
         <event-sheet>Weapon.xml</event-sheet>
-        <event-sheet>Joy.xml</event-sheet>
         <event-sheet>ESLvl2.xml</event-sheet>
         <event-sheet>ESLvlGameMode.xml</event-sheet>
         <event-sheet>ESLvlGameModeAfter.xml</event-sheet>

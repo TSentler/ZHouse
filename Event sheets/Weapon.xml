@@ -59,5 +59,52 @@
                 <action id="-9" name="Destroy" sid="433124292878196" type="FBullets" />
             </actions>
         </event-block>
+        <event-block sid="775679408654107">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="734631761233801" type="Minigun">
+                    <param id="0" name="Instance variable">ShotTrigger</param>
+                </condition>
+                <condition id="-6" name="Every X seconds" sid="188031565366320" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="326976463507307" type="Minigun">
+                    <param id="0" name="Object">BulletSmall</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">&quot;SpawnBullet&quot;</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="312907017123799" type="BulletSmall">
+                    <param id="0" name="Angle">random(-10,10)</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="707956405604450" type="BulletSmall">
+                    <param id="0" name="Speed">400 * Player.Forward</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="247940637716685">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="311159966849594" type="Shotgun">
+                    <param id="0" name="Instance variable">ShotTrigger</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="337092358246439" type="Shotgun">
+                    <param id="0" name="Instance variable">ShotTrigger</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="515402451408470" type="Shotgun">
+                    <param id="0" name="Object">BulletBig</param>
+                    <param id="1" name="Layer">&quot;Game&quot;</param>
+                    <param id="2" name="Image point">&quot;SpawnBullet&quot;</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="669382974138265" type="BulletBig">
+                    <param id="0" name="Angle">random(-4,4)</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="694065412833384" type="BulletBig">
+                    <param id="0" name="Speed">700 * Player.Forward</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

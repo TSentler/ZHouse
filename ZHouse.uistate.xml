@@ -10,19 +10,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Lvl3_bunker</layout>
+        <layout order="0">Lvl3_bunker</layout>
         <layout order="2">Lvl2_pole</layout>
-        <layout order="12">Test</layout>
-        <event-sheet order="1">ESLvl3</event-sheet>
+        <layout order="11">Test</layout>
+        <event-sheet active="1" order="1">ESLvl3</event-sheet>
         <event-sheet order="3">ESLvl2</event-sheet>
         <event-sheet order="4">EPlayerController</event-sheet>
         <event-sheet order="5">Weapon</event-sheet>
         <event-sheet order="6">ESLvlGameMode</event-sheet>
         <event-sheet order="7">ESLvlTest</event-sheet>
-        <event-sheet order="8">Joy</event-sheet>
-        <event-sheet order="9">EnemyZ1</event-sheet>
-        <event-sheet order="10">ESLvlGameModeAfter</event-sheet>
-        <event-sheet order="11">ESLvl1</event-sheet>
+        <event-sheet order="8">EnemyZ1</event-sheet>
+        <event-sheet order="9">ESLvlGameModeAfter</event-sheet>
+        <event-sheet order="10">ESLvl1</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -39,7 +38,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="FEnemies" />
         <family expanded="1" name="FGarbage" />
         <family expanded="1" name="FGuns" />
-        <family expanded="0" name="FBullets" />
+        <family expanded="1" name="FBullets" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
@@ -52,7 +51,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="object-folder/Camping/" />
         <folder expanded="1" path="object-folder/System/" />
         <folder expanded="1" path="object-folder/Player/" />
-        <folder expanded="1" path="object-folder/Bunker/" />
+        <folder expanded="0" path="object-folder/Bunker/" />
         <folder expanded="0" path="object-folder/Enemies/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />

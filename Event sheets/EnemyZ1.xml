@@ -46,9 +46,6 @@
                             <param id="0" name="Instance variable">A2Go</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                        <action id="5" name="Set frame" sid="960243344780039" type="EnemyZ1">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
                         <action behavior="Platform" id="1" name="Set max speed" sid="441707294261151" type="EnemyZ1">
                             <param id="0" name="Max Speed">120</param>
                         </action>
@@ -152,7 +149,11 @@
                             <param id="0" name="Instance variable">A2Go</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="5" name="Set frame" sid="552109945758719" type="EnemyZ1">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="408965350500003">
                             <conditions>
@@ -280,6 +281,11 @@
                                 <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="636034872393274" type="Player">
                                     <param id="0" name="Instance variable">IsHide</param>
                                 </condition>
+                                <condition id="-8" name="Compare two values" sid="320590919673322" type="System">
+                                    <param id="0" name="First value">distance(EnemyZ1.X,Player.Y,EnemyZ1.X,EnemyZ1.Y)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">16</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -288,7 +294,7 @@
                                         <condition id="-8" name="Compare two values" sid="325876079241121" type="System">
                                             <param id="0" name="First value">distance(Player.X,Player.Y,EnemyZ1.X,EnemyZ1.Y)</param>
                                             <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">300</param>
+                                            <param id="2" name="Second value">100</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="935869299466900" type="EnemyZ1">
                                             <param id="0" name="Instance variable">MoveDir</param>
@@ -319,7 +325,7 @@
                                         <condition id="-8" name="Compare two values" sid="921797424076508" type="System">
                                             <param id="0" name="First value">distance(Player.X,Player.Y,EnemyZ1.X,EnemyZ1.Y)</param>
                                             <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">300</param>
+                                            <param id="2" name="Second value">100</param>
                                         </condition>
                                         <condition id="-7" name="Compare instance variable" sid="763008395219066" type="EnemyZ1">
                                             <param id="0" name="Instance variable">MoveDir</param>

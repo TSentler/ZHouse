@@ -89,6 +89,12 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">&quot;CutSceneDoctor&quot;</param>
                         </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="720699076261009" type="EnemyZ1">
+                            <param id="0" name="Unique ID">414</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="290378861560572" type="SolidInvisible">
+                            <param id="0" name="Unique ID">417</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-13" name="Set boolean" sid="268487959622874" type="Trigger">
@@ -98,6 +104,17 @@
                         <action id="0" name="Call function" sid="497823271487228" type="Function">
                             <param id="0" name="Name">&quot;StopPlayerMovement&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="875287568395142" type="EnemyZ1">
+                            <param id="0" name="Instance variable">A2Go</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action disabled="1" id="-10" name="Set value" sid="133239710423857" type="EnemyZ1">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Value">&quot;ZGoRight&quot;</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="666971605439923" type="SolidInvisible">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -114,5 +131,80 @@
             </actions>
         </event-block>
         <include>ESLvlGameModeAfter</include>
+        <event-group description="" sid="525230813069023" title="CutSceneDoctor">
+            <sub-events>
+                <event-block sid="969527944577621">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="394819122683487" type="EnemyZ1">
+                            <param id="0" name="Instance variable">TriggerName</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;ZGoRight&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="317840788354184" type="EnemyZ1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="883126963119636">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="234104247188500" type="Trigger">
+                            <param id="0" name="Object">EnemyZ1</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="469213429771985" type="Trigger">
+                            <param id="0" name="Instance variable">enable</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="108971030422799">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="414652473013090" type="Trigger">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;CSD_ZStop&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="850361328279048" type="Minigun">
+                                    <param id="0" name="Unique ID">412</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="888981422607377" type="Trigger">
+                                    <param id="0" name="Instance variable">enable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="949506151149800" type="EnemyZ1">
+                                    <param id="0" name="Instance variable">A2Go</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-21" name="Rotate toward position" sid="813112637878993" type="Minigun">
+                                    <param id="0" name="Degrees">360</param>
+                                    <param id="1" name="X">EnemyZ1.ImagePointX(0)</param>
+                                    <param id="2" name="Y">EnemyZ1.ImagePointY(0)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="538159314571062" type="Minigun">
+                                    <param id="0" name="Instance variable">ShotTrigger</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="839292856813294" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="475058011048445" type="Minigun">
+                                    <param id="0" name="Instance variable">ShotTrigger</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="455244363087393" type="System">
+                                    <param id="0" name="Seconds">0.7</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="255054502791172" type="Minigun">
+                                    <param id="0" name="Angle">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

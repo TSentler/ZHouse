@@ -8,7 +8,6 @@
         <variable comment="+1 = fade on; -1 = fade off" constant="0" name="FadeOnOff" sid="896231041638145" static="0" type="number">0</variable>
         <variable constant="1" name="CRAWLOFFSETY" sid="217327520000338" static="0" type="number">0</variable>
         <variable constant="0" name="win_i" sid="960254531560774" static="0" type="number">-1</variable>
-        <include>Joy</include>
         <include>EnemyZ1</include>
         <include>EPlayerController</include>
         <event-block sid="264400648385692">

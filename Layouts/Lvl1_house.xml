@@ -2890,6 +2890,7 @@
                         <BulletType>Big</BulletType>
                         <InHand>false</InHand>
                         <isCanTake>true</isCanTake>
+                        <ShotTrigger>false</ShotTrigger>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Physics2">
