@@ -177,10 +177,19 @@
                             <param id="0" name="Variable">IsKeyUp</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action behavior="Platform" id="7" name="Simulate control" sid="600074997951424" type="Player">
-                            <param id="0" name="Control">2</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="780731344714443">
+                            <conditions>
+                                <condition behavior="Platform" id="2" name="Is on floor" sid="778261750347562" type="Player" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="600074997951424" type="Player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="338915915701875">
                     <conditions>
