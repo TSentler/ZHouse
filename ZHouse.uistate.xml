@@ -11,13 +11,13 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">Lvl3_bunker</layout>
-        <layout order="2">Lvl1_house</layout>
+        <layout active="1" order="2">Lvl1_house</layout>
         <layout order="3">Lvl2_pole</layout>
         <layout order="12">Test</layout>
         <event-sheet order="1">ESLvl3</event-sheet>
         <event-sheet order="4">EPlayerController</event-sheet>
         <event-sheet order="5">Weapon</event-sheet>
-        <event-sheet active="1" order="6">ESLvlGameMode</event-sheet>
+        <event-sheet order="6">ESLvlGameMode</event-sheet>
         <event-sheet order="7">ESLvl2</event-sheet>
         <event-sheet order="8">ESLvlTest</event-sheet>
         <event-sheet order="9">EnemyZ1</event-sheet>

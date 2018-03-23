@@ -110,26 +110,43 @@
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
-                        <condition id="-7" name="Compare instance variable" sid="824987683373664" type="Minigun">
-                            <param id="0" name="Instance variable">Name</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;MinigunBonus&quot;</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="982800539693405" type="Shotgun">
-                            <param id="0" name="Instance variable">Name</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;Shotgun&quot;</param>
-                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="361000381574935">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="982800539693405" type="Shotgun">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Shotgun&quot;</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="824987683373664" type="Minigun">
+                                    <param id="0" name="Instance variable">Name</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;MinigunBonus&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="697806753849895" type="Minigun">
+                                    <param id="0" name="Angle">Shotgun.Angle</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="177909895613230" type="Minigun">
+                                    <param id="0" name="Object">Shotgun</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="635595796725342" type="Shotgun" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="162602998703413">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="793783861081453" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-8" name="Set angle" sid="697806753849895" type="Minigun">
-                            <param id="0" name="Angle">Shotgun.Angle</param>
+                        <action id="1" name="Append text" sid="494004329106948" type="TTheEnd">
+                            <param id="0" name="Text">&quot; ?&quot;</param>
                         </action>
-                        <action id="-4" name="Set position to another object" sid="177909895613230" type="Minigun">
-                            <param id="0" name="Object">Shotgun</param>
-                            <param id="1" name="Image point (optional)">0</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="635595796725342" type="Shotgun" />
                     </actions>
                 </event-block>
             </sub-events>

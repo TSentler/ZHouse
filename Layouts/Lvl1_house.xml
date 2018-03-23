@@ -3940,7 +3940,7 @@
                         <hotspot>Top-left</hotspot>
                     </properties>
                     <instance-variables>
-                        <TriggerName>FallStairs</TriggerName>
+                        <TriggerName></TriggerName>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
