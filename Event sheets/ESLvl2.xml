@@ -265,9 +265,9 @@
                             </conditions>
                             <actions>
                                 <action id="-26" name="Move to layer" sid="709403619697623" type="CarBig">
-                                    <param id="0" name="Layer">&quot;Game&quot;</param>
+                                    <param id="0" name="Layer">&quot;Foreground&quot;</param>
                                 </action>
-                                <action id="-24" name="Move to top" sid="802454413902416" type="CarBig" />
+                                <action id="-25" name="Move to bottom" sid="802454413902416" type="CarBig" />
                                 <action behavior="Physics" id="27" name="Set enabled" sid="324326411887249" type="CarBig">
                                     <param id="0" name="Mode">1</param>
                                 </action>
@@ -378,11 +378,17 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-24" name="Move to top" sid="736186848245799" type="Fire" />
                                         <action id="-26" name="Move to layer" sid="218970872882121" type="Smoke">
-                                            <param id="0" name="Layer">&quot;Game&quot;</param>
+                                            <param id="0" name="Layer">&quot;Foreground&quot;</param>
                                         </action>
-                                        <action id="-24" name="Move to top" sid="605168967279309" type="Smoke" />
+                                        <action id="-29" name="Move to object" sid="605168967279309" type="Smoke">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Object">CarBig</param>
+                                        </action>
+                                        <action id="-29" name="Move to object" sid="736186848245799" type="Fire">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Object">CarBig</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="638394864538924">
