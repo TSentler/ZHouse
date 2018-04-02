@@ -2,10 +2,10 @@
 <c2project>
     <name>ZHouse</name>
     <description></description>
-    <version>1.0.0.0</version>
-    <author></author>
-    <author-email></author-email>
-    <author-website>http://</author-website>
+    <version>0.0.0.2</version>
+    <author>MechaCryach</author>
+    <author-email>centner_dc@mail.ru</author-email>
+    <author-website>https://vk.com/mechacryach</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>1gdx0q68a53wc</unique-id>
     <saved-with-version>23900</saved-with-version>
@@ -45,6 +45,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Lvl1_house</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>

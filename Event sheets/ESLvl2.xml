@@ -265,9 +265,9 @@
                             </conditions>
                             <actions>
                                 <action id="-26" name="Move to layer" sid="709403619697623" type="CarBig">
-                                    <param id="0" name="Layer">&quot;Foreground&quot;</param>
+                                    <param id="0" name="Layer">&quot;Game&quot;</param>
                                 </action>
-                                <action id="-25" name="Move to bottom" sid="802454413902416" type="CarBig" />
+                                <action id="-24" name="Move to top" sid="802454413902416" type="CarBig" />
                                 <action behavior="Physics" id="27" name="Set enabled" sid="324326411887249" type="CarBig">
                                     <param id="0" name="Mode">1</param>
                                 </action>
